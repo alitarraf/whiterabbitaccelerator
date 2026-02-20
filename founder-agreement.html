@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Founder Agreement — White Rabbit Accelerator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+    :root {
+      --forest: #0D2612;
+      --jungle: #1A4023;
+      --moss: #2E6B3E;
+      --leaf: #4CAF50;
+      --lime: #CCFF00;
+      --mint: #E0F2E9;
+      --white: #FFFFFF;
+      --black: #050F07;
+      --muted: #7DBF8E;
+      --border: #2E6B3E;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--forest);
+      color: var(--mint);
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      height: 74px;
+      background: rgba(5, 15, 7, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(204, 255, 0, 0.15);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-logo-svg {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .nav-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 21px;
+      letter-spacing: 3px;
+      color: var(--lime);
+      line-height: 1;
+    }
+
+    .nav-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 3px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lime);
+    }
+
+    .nav-cta {
+      background: var(--lime) !important;
+      color: var(--forest) !important;
+      font-weight: 800 !important;
+      padding: 9px 22px !important;
+      border-radius: 3px !important;
+    }
+
+    .nav-cta:hover {
+      background: #d9ff1a !important;
+    }
+
+    .nav-back {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-back:hover {
+      color: var(--lime);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--forest);
+      padding: 17px 38px;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      border: 2px solid var(--lime);
+    }
+
+    .btn-primary:hover {
+      background: #d9ff1a;
+      border-color: #d9ff1a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--lime);
+      padding: 17px 38px;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      border: 2px solid rgba(204, 255, 0, 0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--lime);
+      transform: translateY(-2px);
+    }
+
+    .sec-dark {
+      background: var(--forest);
+    }
+
+    .sec-light {
+      background: var(--jungle);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+
+    .section-pad {
+      padding: 108px 0;
+    }
+
+    .eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--lime);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 88px);
+      letter-spacing: 2px;
+      line-height: .92;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+
+    .section-sub {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 640px;
+      margin-bottom: 68px;
+      font-weight: 400;
+    }
+
+    .rule {
+      width: 56px;
+      height: 4px;
+      background: var(--lime);
+      margin-bottom: 30px;
+      border-radius: 2px;
+    }
+
+    .page-hero {
+      margin-top: 74px;
+      padding: 88px 56px 72px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 8vw, 96px);
+      letter-spacing: 2px;
+      line-height: .9;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+
+    .page-hero p {
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 660px;
+    }
+
+    .form-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px 56px;
+    }
+
+    .form-note {
+      background: rgba(204, 255, 0, 0.07);
+      border-left: 4px solid var(--lime);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .form-section {
+      margin-bottom: 60px;
+    }
+
+    .form-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 6px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--lime);
+    }
+
+    .form-section-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--leaf);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .field-group.full {
+      grid-template-columns: 1fr;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--mint);
+    }
+
+    label span.req {
+      color: var(--lime);
+    }
+
+    input,
+    textarea,
+    select {
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 15px 18px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 17px;
+      color: var(--white);
+      background: #0A1E0D;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--lime);
+      background: #0F2812;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--muted);
+    }
+
+    select option {
+      background: var(--forest);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .char-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      cursor: pointer;
+    }
+
+    .radio-option input {
+      width: auto;
+      accent-color: var(--lime);
+    }
+
+    .radio-option span {
+      font-size: 17px;
+      color: var(--mint);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--mint);
+    }
+
+    .checkbox-option input {
+      width: auto;
+      accent-color: var(--lime);
+    }
+
+    .submit-block {
+      background: var(--jungle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 52px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .submit-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .submit-block p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.75;
+    }
+
+    .btn-submit {
+      background: var(--lime);
+      color: var(--forest);
+      border: none;
+      padding: 20px 56px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .btn-submit:hover {
+      background: #d9ff1a;
+      transform: translateY(-2px);
+    }
+
+    .doc-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px 56px;
+    }
+
+    .doc-section {
+      margin-bottom: 48px;
+    }
+
+    .doc-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 16px;
+      margin-top: 40px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--lime);
+    }
+
+    .doc-section h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--mint);
+      margin-top: 20px;
+    }
+
+    .doc-section p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .doc-section ul {
+      margin-left: 24px;
+      margin-bottom: 14px;
+    }
+
+    .doc-section ul li {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .doc-section strong {
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: rgba(204, 255, 0, 0.07);
+      border-left: 4px solid var(--lime);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+    }
+
+    .highlight-box p {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--mint);
+      margin: 0;
+    }
+
+    .sign-block {
+      background: var(--jungle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 52px;
+      margin-top: 60px;
+    }
+
+    .sign-block p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .sign-block h2 {
+      border-color: var(--leaf) !important;
+    }
+
+    .sign-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 30px;
+    }
+
+    .sign-field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .sign-field label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .sign-field input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--mint);
+      font-size: 17px;
+    }
+
+    .sign-field input:focus {
+      border-color: var(--lime);
+    }
+
+    .btn-sign {
+      background: var(--lime);
+      color: var(--forest);
+      border: none;
+      padding: 20px 40px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 30px;
+      font-family: 'Manrope', sans-serif;
+      width: 100%;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all .2s;
+    }
+
+    .btn-sign:hover {
+      background: #d9ff1a;
+    }
+
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--leaf);
+      color: var(--leaf);
+      padding: 11px 26px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      float: right;
+      margin-bottom: 28px;
+      transition: all .2s;
+    }
+
+    .print-btn:hover {
+      background: var(--leaf);
+      color: var(--forest);
+    }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 38px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 21px;
+      letter-spacing: 3px;
+      color: var(--lime);
+    }
+
+    .footer-info {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .footer-links {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .footer-links a {
+      color: var(--lime);
+      text-decoration: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--black);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--moss);
+      border-radius: 3px;
+    }
+
+    @media(max-width:900px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page-hero {
+        padding: 72px 24px 56px;
+      }
+
+      .section-inner,
+      .form-wrap,
+      .doc-wrap {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .field-group {
+        grid-template-columns: 1fr;
+      }
+
+      .sign-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+
+    @media print {
+
+      nav,
+      .print-btn,
+      .btn-sign,
+      .btn-submit {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav><a href="index.html" class="nav-brand">
+      <div class="nav-logo-svg"><svg id="wr-logo" xmlns="http://www.w3.org/2000/svg" version="1.1"
+          viewBox="0 0 115.13 115.13">
+          <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+          <defs>
+            <style>
+              .st0 {
+                fill: #CCFF00;
+              }
+
+              .st1,
+              .st2,
+              .st3,
+              .st4 {
+                fill: #fff;
+              }
+
+              .st1,
+              .st2,
+              .st4 {
+                stroke-width: 1.84px;
+              }
+
+              .st1,
+              .st2,
+              .st4,
+              .st5 {
+                stroke-miterlimit: 10;
+              }
+
+              .st1,
+              .st4 {
+                stroke: #CCFF00;
+              }
+
+              .st6 {
+                fill: rgba(204, 255, 0, 0.35);
+              }
+
+              .st2,
+              .st5 {
+                stroke: #CCFF00;
+              }
+
+              .st7 {
+                fill: #CCFF00;
+              }
+
+              .st4 {
+                stroke-linecap: round;
+              }
+
+              .st5 {
+                fill: none;
+                stroke-width: 4.53px;
+              }
+            </style>
+          </defs>
+          <g>
+            <path class="st5"
+              d="M37.81,26.36c-4.55.85-28.2,16.69-26.2,42.21,2.13,27.12,24.02,31.72,29.35,35.4,1.52,1.05,24.14,18.06,49.04-4.99,0,0,8.03-4.09,11.48-10.47,1.51-2.8,1.21-10.71,1.11-10.46" />
+            <path class="st5" d="M20.54,86.83c-6.23,3.42-9.82,1.98-13.9-2.17s-.95-10.96,6.9-13.91" />
+          </g>
+          <ellipse class="st3" cx="96.94" cy="72.24" rx="7.1" ry="19.16" />
+          <ellipse class="st3" cx="65.36" cy="54.56" rx="29.95" ry="34.37" />
+          <path class="st1" d="M104.37,70.82c2.61-.26,3.46,1.04,3.13,3.81-.24,2.01-12.3,8.37-13.28,7.14" />
+          <g>
+            <path class="st3"
+              d="M60.12,18.87c.09,2.44-31.33-4.39-27.94-8.39,5.31-6.29,33.19-9.16,50.09,2.16s27.96,20.61,30.57,32.96c2.33,11.02-3.53,21.55-6.4,23.79-2.7,2.11-11.11,5.28-14.09,1.36" />
+            <path class="st0"
+              d="M61.03,18.83c-.14,2.33-4.65,1.02-6.12.88-5.27-.99-10.46-2.31-15.57-3.96-1.92-.78-8.39-2.51-7.68-5.1.23-.52.6-.76.96-1.13,2.84-2.36,6.44-3.32,9.94-4.16,7.04-1.51,14.34-1.67,21.52-.71,7.18.96,14.39,3.42,20.31,7.65,5.91,4,11.75,8.2,17.09,13.09,12.11,10.83,17.41,24.5,9.58,39.74-.9,1.64-1.87,3.21-3.29,4.65-3.01,2.51-6.76,3.66-10.64,3.85-2.02.04-4.25-.61-5.54-2.32-.31-.4-.24-.98.16-1.29.41-.32.99-.23,1.3.17,2.9,2.85,7.99.78,11.15-.78,2.31-1.14,3.4-3.21,4.59-5.46,4.82-9.34,4.06-20.4-2.4-28.69-6.27-8.44-15.03-14.56-23.66-20.51-5.6-4.09-12.19-6.44-19.03-7.81-8.99-1.61-22.85-2.31-30.62,3.11-.54.51-1.25.96-.53,1.73,4.15,3.91,21.12,7.6,26.84,6.64.06-.02.09-.05.05-.03-.03,0-.28.2-.26.51-.02-1.2,1.77-1.28,1.84-.07h0Z" />
+          </g>
+          <g>
+            <path class="st3"
+              d="M48.47,87.63c-.24-1.81-3.98-8.78,5.1-21.61,9.12-12.88,46.3-15.15,39.46,23.5-.95,5.4-5.24,11.27-11.61,12.29" />
+            <path class="st7"
+              d="M47.55,87.75c-1.17-4.38-.82-9.21.96-13.37,1.83-4.08,4.03-8.19,7.4-11.19,5.24-4.41,12.22-5.89,18.92-5.94,13.96-.69,19.88,11.2,19.44,23.54-.16,4.47-.34,9.18-2.26,13.3-1.99,4.2-5.82,7.65-10.45,8.63,0,0-.29-1.82-.29-1.82,2.06-.22,4.05-1.07,5.75-2.35,2.52-1.96,4.42-4.84,5.29-7.93.73-3.17,1.09-6.57,1.09-9.84.21-11.88-7.16-20.3-18.64-22.66-2.15-.45-4.44-.31-6.6.03-4.35.75-8.64,2.44-11.97,5.35-5.37,5.27-9.74,14.82-7.32,22.3.08.27.31.94.39,1.2,0,0,.12.51.12.51l-1.82.24h0Z" />
+          </g>
+          <path class="st2"
+            d="M37.54,23.39c-4.63.85-28.74,16.87-26.7,42.65,2.17,27.4,24.48,32.05,29.91,35.77,1.55,1.06,24.6,18.25,49.98-5.04,0,0,8.18-4.13,11.7-10.58,1.54-2.83-4.33.33-5.35,1.93" />
+          <path class="st0"
+            d="M98.03,60.72c1.98-.19.97-4.69.43-5.61s-3.33-3.15-4.23-3.01-1.27,3.49-.7,4.72c.75,1.62,2.87,4.06,4.49,3.9Z" />
+          <g>
+            <path class="st3"
+              d="M81.83,37.07c1.51-1.95-32.35-10.87-46.42-2.19-14.08,8.68-11.39-6.47-6.47-11.28,7.82-7.64,30.56-18.17,58.12,10.32" />
+            <path class="st7"
+              d="M81.11,36.5c-.18.21-.2.54-.06.76-.02-.02-.15-.12-.29-.19-4.77-2.22-10.14-3.01-15.31-3.85-10.28-1.26-21.76-2.27-30.86,3.47-3.44,2.05-9.53,3.69-10.61-1.88-.57-4.03.96-7.85,3.28-11.02,1.46-1.75,3.35-3.13,5.26-4.35,7.5-4.83,17.07-6.07,25.64-4.06,11.58,2.66,20.88,10.21,29.57,17.9,0,0-1.32,1.28-1.32,1.28-3.81-4.24-7.97-8.3-12.84-11.33-9.41-6.24-21.46-9.31-32.35-5.59-5.06,1.81-10.41,4.47-13.27,9.21-1.26,2.17-3.51,8.77.11,9.49,2.39.23,5.19-1.53,7.28-2.75,11.02-6.33,35.16-3.31,46.4,1.91.28.16.64.44.86.76.27.41.28.98-.03,1.38,0,0-1.45-1.13-1.45-1.13h0Z" />
+          </g>
+          <path class="st6"
+            d="M70.74,32.18c-9.12-2.3-28.43-3.26-35.78,1.96-7.24,5.14-6.52-2.05-4.27-4.93,3.57-4.57,18.86-12.83,37.65,1.09" />
+          <path class="st2" d="M21.89,88.75c-8,2.98-15.21-.24-17.18-5.53-1.97-5.29.02-11.56,8.02-14.54" />
+          <path class="st4" d="M94.23,82.92c1.75-2.12,8.39-4.75,9.34-4.34s.87,2.62-.29,3.14" />
+          <path class="st4" d="M98.57,83.73s2.29-2.25,4.1-1.93.49,2.88.39,2.86" />
+        </svg></div>
+      <div class="nav-wordmark"><span class="nav-name">White Rabbit Accelerator</span><span class="nav-sub">Ashland,
+          Oregon · Rogue Valley</span></div>
+    </a><a href="index.html" class="nav-back">← Back to Home</a></nav>
+  <div class="page-hero sec-dark">
+    <div class="eyebrow">Program Document</div>
+    <h1>Founder<br>Agreement</h1>
+    <p>White Rabbit Accelerator · Cohort 1 · March 9 – June 6, 2026 · Ashland, Oregon</p>
+  </div>
+  <div class="sec-light">
+    <div class="doc-wrap">
+      <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+      <div style="clear:both"></div>
+      <div class="highlight-box">
+        <p>This agreement is between the White Rabbit Accelerator ("Program"), directed by Ali Tarraf and Thor Mueller,
+          and the founder(s) named below ("Founder"). Please read carefully before signing.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>1. Program Overview</h2>
+        <p>The White Rabbit Accelerator is a 4-month cohort-based program running from <strong>March 9 to June 6,
+            2026</strong> in Ashland, Oregon. The program provides mentorship, access to local resources, peer learning,
+          and community connections to early-stage entrepreneurs in the Rogue Valley.</p>
+        <p>The program concludes with a public <strong>Demo Day on Saturday, June 6, 2026</strong>, where founders
+          present to the community, stakeholders, and supporters.</p>
+      </div>
+      <div class="doc-section">
+        <h2>2. Founder Commitments</h2>
+        <p>By signing this agreement, the Founder commits to:</p>
+        <ul>
+          <li><strong>Weekly 1:1 Mentorship Sessions:</strong> Attend all scheduled 55-minute weekly sessions with your
+            assigned mentor. Provide 24 hours notice if you must reschedule.</li>
+          <li><strong>Monthly All-Hands Meetups:</strong> Attend all four cohort-wide meetups (approximately 2 hours
+            each, held at end of months 1–4).</li>
+          <li><strong>Demo Day:</strong> Participate fully in Demo Day on June 6, 2026, including at least one rehearsal
+            with the mentor panel and one peer rehearsal.</li>
+          <li><strong>Milestone Deliverables:</strong> Complete all program milestones on schedule, including Business
+            Baseline (Week 2–3), SMART Goals (Week 4), MVP (Week 8), and Pitch Deck (Week 14).</li>
+          <li><strong>Good Faith Participation:</strong> Engage honestly and actively with mentors, peers, and program
+            staff. Bring real challenges. Ask for help.</li>
+          <li><strong>Respect and Professionalism:</strong> Treat all cohort members, mentors, and program staff with
+            respect. Uphold a collaborative and supportive community environment.</li>
+          <li><strong>Communication:</strong> Respond to program communications within 48 hours. Use the designated
+            program Slack channel.</li>
+        </ul>
+      </div>
+      <div class="doc-section">
+        <h2>3. What the Program Provides</h2>
+        <ul>
+          <li>Weekly 1:1 mentor sessions (55 minutes each) for 16 weeks</li>
+          <li>Access to Talent Makerspace, SOREDI Innovation Hub, and White Rabbit Co-working Space</li>
+          <li>Warm networking introductions to Rogue Valley stakeholders and business community</li>
+          <li>Peer cohort learning and roundtables</li>
+          <li>Monthly all-hands meetups hosted by the program</li>
+          <li>Demo Day preparation coaching and event production</li>
+          <li>Case-by-case access to small grant applications and support</li>
+          <li>Inclusion in White Rabbit Accelerator alumni network</li>
+        </ul>
+        <p>The program does not provide equity investment, salary, or guaranteed funding outcomes.</p>
+      </div>
+      <div class="doc-section">
+        <h2>4. Intellectual Property</h2>
+        <p>The Founder retains <strong>full ownership</strong> of all intellectual property (IP) developed during the
+          program. White Rabbit Accelerator makes no claim on the Founder's business, products, ideas, or any other IP
+          created during or after the program.</p>
+        <p>Mentors and program staff may provide advice and feedback, but this does not create any ownership interest in
+          the Founder's venture.</p>
+      </div>
+      <div class="doc-section">
+        <h2>5. Confidentiality</h2>
+        <p>Program participants (founders, mentors, and staff) agree to keep cohort-shared business information
+          confidential. Founders should not share proprietary details of other founders' ventures outside the program
+          without permission.</p>
+        <p>The Program may share anonymized outcomes (e.g. "A cohort member reached $X revenue") for promotional
+          purposes unless the Founder opts out in writing.</p>
+      </div>
+      <div class="doc-section">
+        <h2>6. Photography &amp; Media</h2>
+        <p>The Founder grants the White Rabbit Accelerator permission to photograph and record program events, including
+          Demo Day, for use in promotional materials, social media, and press. The Founder may opt out of specific uses
+          by written request.</p>
+      </div>
+      <div class="doc-section">
+        <h2>7. Equity &amp; Financial Terms</h2>
+        <p>The White Rabbit Accelerator <strong>does not take equity</strong> in participating companies. Participation
+          in the program is provided at no cost to accepted founders for Cohort 1. Any future fees or equity
+          arrangements will be disclosed separately and require a new written agreement.</p>
+      </div>
+      <div class="doc-section">
+        <h2>8. Removal from Program</h2>
+        <p>The Program reserves the right to remove a Founder who consistently fails to meet commitments, engages in
+          disrespectful behavior, or whose participation is determined to be detrimental to the cohort. Removal
+          decisions will be made by program directors after a written warning and opportunity to remedy the issue.</p>
+      </div>
+      <div class="doc-section">
+        <h2>9. Limitation of Liability</h2>
+        <p>The White Rabbit Accelerator, its directors, mentors, and partners make no guarantees about business
+          outcomes, funding, revenue, or success. The Founder participates voluntarily and accepts responsibility for
+          their own business decisions.</p>
+      </div>
+      <div class="doc-section">
+        <h2>10. Governing Law</h2>
+        <p>This agreement is governed by the laws of the State of Oregon. Any disputes shall be resolved in Jackson
+          County, Oregon.</p>
+      </div>
+
+      <div class="sign-block">
+        <h2
+          style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;color:var(--white);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--leaf);">
+          Founder Signature</h2>
+        <p>By completing and submitting this form, you confirm that you have read, understood, and agree to the terms
+          above.</p>
+        <form action="" method="POST" data-success-title="Agreement Signed!"
+          data-success-message="Thank you! Your Founder Agreement has been submitted. Ali and Thor will confirm receipt and send you your program onboarding details within 48 hours.">
+          <input type="hidden" name="form_type" value="FounderAgreement">
+          <div class="sign-grid">
+            <div class="sign-field"><label>Full Legal Name *</label><input type="text" name="legal_name" required
+                placeholder="Jane Smith"></div>
+            <div class="sign-field"><label>Business / Venture Name *</label><input type="text" name="business_name"
+                required placeholder="Your Business Name"></div>
+            <div class="sign-field"><label>Email Address *</label><input type="email" name="email" required
+                placeholder="jane@example.com"></div>
+            <div class="sign-field"><label>Date *</label><input type="date" name="date" required></div>
+            <div class="sign-field" style="grid-column:1/-1"><label>Signature — type your full name to sign
+                *</label><input type="text" name="signature" required placeholder="Type full name as signature"></div>
+            <div class="sign-field"><label>Co-Founder Name (if applicable)</label><input type="text"
+                name="co_founder_name" placeholder="Leave blank if solo founder"></div>
+          </div>
+          <button type="submit" class="btn-sign">✓ Sign &amp; Submit Agreement</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-brand">White Rabbit Accelerator</div>
+    <div class="footer-info">Ashland, Oregon · Rogue Valley · Directors: Ali Tarraf &amp; Thor Mueller<br>Applications
+      Open Feb 25, 2026 · Cohort Starts Mar 9 · Demo Day Jun 6, 2026</div>
+    <div class="footer-links"><a href="founder-application.html">Apply</a> · <a href="mentor-agreement.html">Mentor</a>
+    </div>
+  </footer>
+  <script src="js/form-submission.js"></script>
+</body>
+
+</html>
