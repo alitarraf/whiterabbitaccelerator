@@ -1,220 +1,1038 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Email Sequence — White Rabbit Accelerator</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-:root{--forest:#0D2612;--jungle:#1A4023;--moss:#2E6B3E;--leaf:#4CAF50;--lime:#CCFF00;--mint:#E0F2E9;--white:#FFFFFF;--black:#050F07;--muted:#7DBF8E;--border:#2E6B3E;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--forest);color:var(--mint);font-family:'Manrope',sans-serif;font-size:18px;line-height:1.75;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:74px;background:rgba(5,15,7,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(204,255,0,0.15);}
-.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
-.nav-logo-svg{width:44px;height:44px;flex-shrink:0;}
-.nav-wordmark{display:flex;flex-direction:column;gap:2px;}
-.nav-name{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:3px;color:var(--lime);line-height:1;}
-.nav-sub{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);line-height:1;}
-.nav-links{display:flex;gap:4px;align-items:center;}
-.nav-links a{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:3px;transition:color .2s;}
-.nav-links a:hover{color:var(--lime);}
-.nav-cta{background:var(--lime)!important;color:var(--forest)!important;font-weight:800!important;padding:9px 22px!important;border-radius:3px!important;}
-.nav-cta:hover{background:#d9ff1a!important;}
-.nav-back{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-back:hover{color:var(--lime);}
-.btn-primary{display:inline-block;background:var(--lime);color:var(--forest);padding:17px 38px;border-radius:4px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .2s;border:2px solid var(--lime);}
-.btn-primary:hover{background:#d9ff1a;border-color:#d9ff1a;transform:translateY(-2px);}
-.btn-outline{display:inline-block;background:transparent;color:var(--lime);padding:17px 38px;border-radius:4px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .2s;border:2px solid rgba(204,255,0,0.4);}
-.btn-outline:hover{border-color:var(--lime);transform:translateY(-2px);}
-.sec-dark{background:var(--forest);}
-.sec-light{background:var(--jungle);}
-.section-inner{max-width:1180px;margin:0 auto;padding:0 56px;}
-.section-pad{padding:108px 0;}
-.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:18px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,88px);letter-spacing:2px;line-height:.92;margin-bottom:22px;color:var(--white);}
-.section-sub{font-size:19px;color:var(--muted);line-height:1.8;max-width:640px;margin-bottom:68px;font-weight:400;}
-.rule{width:56px;height:4px;background:var(--lime);margin-bottom:30px;border-radius:2px;}
-.page-hero{margin-top:74px;padding:88px 56px 72px;border-bottom:1px solid var(--border);}
-.page-hero .eyebrow{margin-bottom:16px;}
-.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,96px);letter-spacing:2px;line-height:.9;color:var(--white);margin-bottom:22px;}
-.page-hero p{font-size:20px;color:var(--muted);line-height:1.75;max-width:660px;}
-.form-wrap{max-width:880px;margin:0 auto;padding:80px 56px;}
-.form-note{background:rgba(204,255,0,0.07);border-left:4px solid var(--lime);padding:20px 24px;border-radius:0 8px 8px 0;font-size:17px;color:var(--muted);margin-bottom:40px;line-height:1.75;}
-.form-section{margin-bottom:60px;}
-.form-section-title{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;color:var(--white);margin-bottom:6px;padding-bottom:14px;border-bottom:2px solid var(--lime);}
-.form-section-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--leaf);text-transform:uppercase;margin-bottom:32px;display:block;margin-top:8px;}
-.field-group{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
-.field-group.full{grid-template-columns:1fr;}
-.field{display:flex;flex-direction:column;gap:9px;}
-label{font-size:16px;font-weight:600;color:var(--mint);}
-label span.req{color:var(--lime);}
-input,textarea,select{border:1.5px solid var(--border);border-radius:6px;padding:15px 18px;font-family:'Manrope',sans-serif;font-size:17px;color:var(--white);background:#0A1E0D;outline:none;transition:border-color .2s;width:100%;}
-input:focus,textarea:focus,select:focus{border-color:var(--lime);background:#0F2812;}
-input::placeholder,textarea::placeholder{color:var(--muted);}
-select option{background:var(--forest);}
-textarea{resize:vertical;min-height:130px;}
-.char-hint{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-top:4px;}
-.radio-group{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
-.radio-option{display:flex;align-items:center;gap:13px;cursor:pointer;}
-.radio-option input{width:auto;accent-color:var(--lime);}
-.radio-option span{font-size:17px;color:var(--mint);}
-.checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;}
-.checkbox-option{display:flex;align-items:center;gap:11px;cursor:pointer;font-size:16px;color:var(--mint);}
-.checkbox-option input{width:auto;accent-color:var(--lime);}
-.submit-block{background:var(--jungle);border:1px solid var(--border);border-radius:12px;padding:52px;text-align:center;margin-top:60px;}
-.submit-block h3{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:1px;color:var(--white);margin-bottom:14px;}
-.submit-block p{color:var(--muted);font-size:18px;margin-bottom:30px;line-height:1.75;}
-.btn-submit{background:var(--lime);color:var(--forest);border:none;padding:20px 56px;border-radius:4px;font-size:18px;font-weight:800;cursor:pointer;transition:all .2s;font-family:'Manrope',sans-serif;letter-spacing:1px;text-transform:uppercase;}
-.btn-submit:hover{background:#d9ff1a;transform:translateY(-2px);}
-.doc-wrap{max-width:880px;margin:0 auto;padding:80px 56px;}
-.doc-section{margin-bottom:48px;}
-.doc-section h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;color:var(--white);margin-bottom:16px;margin-top:40px;padding-bottom:12px;border-bottom:2px solid var(--lime);}
-.doc-section h3{font-size:19px;font-weight:700;margin-bottom:12px;color:var(--mint);margin-top:20px;}
-.doc-section p{font-size:18px;line-height:1.85;color:var(--muted);margin-bottom:14px;}
-.doc-section ul{margin-left:24px;margin-bottom:14px;}
-.doc-section ul li{font-size:18px;line-height:1.85;color:var(--muted);margin-bottom:8px;}
-.doc-section strong{color:var(--mint);font-weight:700;}
-.highlight-box{background:rgba(204,255,0,0.07);border-left:4px solid var(--lime);padding:20px 24px;border-radius:0 8px 8px 0;margin-bottom:32px;}
-.highlight-box p{font-size:18px;font-weight:500;color:var(--mint);margin:0;}
-.sign-block{background:var(--jungle);border:1px solid var(--border);border-radius:12px;padding:52px;margin-top:60px;}
-.sign-block p{color:var(--muted);font-size:18px;margin-bottom:6px;}
-.sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px;}
-.sign-field{display:flex;flex-direction:column;gap:9px;}
-.sign-field label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:400;}
-.sign-field input{background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--mint);font-size:17px;}
-.sign-field input:focus{border-color:var(--lime);}
-.btn-sign{background:var(--lime);color:var(--forest);border:none;padding:20px 40px;border-radius:4px;font-size:18px;font-weight:800;cursor:pointer;margin-top:30px;font-family:'Manrope',sans-serif;width:100%;letter-spacing:1px;text-transform:uppercase;transition:all .2s;}
-.btn-sign:hover{background:#d9ff1a;}
-.print-btn{background:transparent;border:1px solid var(--leaf);color:var(--leaf);padding:11px 26px;border-radius:4px;font-size:13px;cursor:pointer;font-family:'Space Mono',monospace;letter-spacing:1px;text-transform:uppercase;float:right;margin-bottom:28px;transition:all .2s;}
-.print-btn:hover{background:var(--leaf);color:var(--forest);}
-footer{background:var(--black);border-top:1px solid var(--border);padding:38px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:3px;color:var(--lime);}
-.footer-info{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--muted);text-align:center;line-height:1.9;}
-.footer-links{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--muted);}
-.footer-links a{color:var(--lime);text-decoration:none;}
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:var(--black);}
-::-webkit-scrollbar-thumb{background:var(--moss);border-radius:3px;}
-@media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}.page-hero{padding:72px 24px 56px;}.section-inner{padding:0 24px;}.form-wrap,.doc-wrap{padding:56px 24px;}.field-group{grid-template-columns:1fr;}.sign-grid{grid-template-columns:1fr;}footer{padding:28px 24px;}}
-@media print{nav,.print-btn,.btn-sign,.btn-submit{display:none!important;}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Email Sequence — White Rabbit Accelerator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
-.email-list{display:flex;flex-direction:column;gap:0;}
-.email-item{border:1px solid var(--border);border-bottom:0;background:var(--jungle);overflow:hidden;}
-.email-item:first-child{border-radius:12px 12px 0 0;}
-.email-item:last-child{border-radius:0 0 12px 12px;border-bottom:1px solid var(--border);}
-.email-item:nth-child(even){background:var(--forest);}
-.email-header{padding:22px 28px;cursor:pointer;display:flex;align-items:center;gap:18px;user-select:none;transition:background .15s;}
-.email-header:hover{background:rgba(204,255,0,0.04);}
-.email-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;color:var(--forest);background:var(--lime);}
-.email-meta{flex:1;}
-.email-timing{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
-.email-subject-preview{font-size:18px;font-weight:700;color:var(--white);}
-.email-to{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-top:3px;}
-.email-toggle{font-size:20px;color:var(--lime);transition:transform .2s;}
-.email-item.open .email-toggle{transform:rotate(180deg);}
-.email-body{display:none;padding:0 28px 36px 86px;border-top:1px solid var(--border);}
-.email-item.open .email-body{display:block;}
-.email-meta-row{display:grid;grid-template-columns:80px 1fr;gap:8px;align-items:baseline;margin-bottom:6px;font-size:16px;}
-.email-meta-row .lbl{color:var(--muted);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;}
-.email-meta-row .val{color:var(--mint);font-weight:600;}
-.email-divider{border:none;border-top:1px solid var(--border);margin:18px 0;}
-.email-content{font-size:17px;line-height:1.9;color:var(--muted);white-space:pre-wrap;}
-.email-content em{color:var(--lime);font-style:normal;background:rgba(204,255,0,0.12);padding:2px 6px;border-radius:3px;font-family:'Space Mono',monospace;font-size:14px;}
-.copy-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:10px 20px;border-radius:4px;font-size:13px;cursor:pointer;font-family:'Space Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-top:20px;transition:all .2s;}
-.copy-btn:hover{background:var(--lime);color:var(--forest);border-color:var(--lime);}
-.phase-label{background:var(--lime);color:var(--forest);padding:14px 28px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-top:24px;border-radius:8px 8px 0 0;}
-@media(max-width:700px){.email-body{padding-left:28px;}}
-</style>
+    :root {
+      --forest: #0D2612;
+      --jungle: #1A4023;
+      --moss: #2E6B3E;
+      --leaf: #4CAF50;
+      --lime: #CCFF00;
+      --mint: #E0F2E9;
+      --white: #FFFFFF;
+      --black: #050F07;
+      --muted: #7DBF8E;
+      --border: #2E6B3E;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--forest);
+      color: var(--mint);
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      height: 74px;
+      background: rgba(5, 15, 7, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(204, 255, 0, 0.15);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-logo-svg {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .nav-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 21px;
+      letter-spacing: 3px;
+      color: var(--lime);
+      line-height: 1;
+    }
+
+    .nav-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 3px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lime);
+    }
+
+    .nav-cta {
+      background: var(--lime) !important;
+      color: var(--forest) !important;
+      font-weight: 800 !important;
+      padding: 9px 22px !important;
+      border-radius: 3px !important;
+    }
+
+    .nav-cta:hover {
+      background: #d9ff1a !important;
+    }
+
+    .nav-back {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-back:hover {
+      color: var(--lime);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--forest);
+      padding: 17px 38px;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      border: 2px solid var(--lime);
+    }
+
+    .btn-primary:hover {
+      background: #d9ff1a;
+      border-color: #d9ff1a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--lime);
+      padding: 17px 38px;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      border: 2px solid rgba(204, 255, 0, 0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--lime);
+      transform: translateY(-2px);
+    }
+
+    .sec-dark {
+      background: var(--forest);
+    }
+
+    .sec-light {
+      background: var(--jungle);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+
+    .section-pad {
+      padding: 108px 0;
+    }
+
+    .eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--lime);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 88px);
+      letter-spacing: 2px;
+      line-height: .92;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+
+    .section-sub {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 640px;
+      margin-bottom: 68px;
+      font-weight: 400;
+    }
+
+    .rule {
+      width: 56px;
+      height: 4px;
+      background: var(--lime);
+      margin-bottom: 30px;
+      border-radius: 2px;
+    }
+
+    .page-hero {
+      margin-top: 74px;
+      padding: 88px 56px 72px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 8vw, 96px);
+      letter-spacing: 2px;
+      line-height: .9;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+
+    .page-hero p {
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 660px;
+    }
+
+    .form-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px 56px;
+    }
+
+    .form-note {
+      background: rgba(204, 255, 0, 0.07);
+      border-left: 4px solid var(--lime);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .form-section {
+      margin-bottom: 60px;
+    }
+
+    .form-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 6px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--lime);
+    }
+
+    .form-section-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--leaf);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .field-group.full {
+      grid-template-columns: 1fr;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--mint);
+    }
+
+    label span.req {
+      color: var(--lime);
+    }
+
+    input,
+    textarea,
+    select {
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 15px 18px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 17px;
+      color: var(--white);
+      background: #0A1E0D;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--lime);
+      background: #0F2812;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--muted);
+    }
+
+    select option {
+      background: var(--forest);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .char-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      cursor: pointer;
+    }
+
+    .radio-option input {
+      width: auto;
+      accent-color: var(--lime);
+    }
+
+    .radio-option span {
+      font-size: 17px;
+      color: var(--mint);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--mint);
+    }
+
+    .checkbox-option input {
+      width: auto;
+      accent-color: var(--lime);
+    }
+
+    .submit-block {
+      background: var(--jungle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 52px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .submit-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .submit-block p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.75;
+    }
+
+    .btn-submit {
+      background: var(--lime);
+      color: var(--forest);
+      border: none;
+      padding: 20px 56px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .btn-submit:hover {
+      background: #d9ff1a;
+      transform: translateY(-2px);
+    }
+
+    .doc-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px 56px;
+    }
+
+    .doc-section {
+      margin-bottom: 48px;
+    }
+
+    .doc-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 16px;
+      margin-top: 40px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--lime);
+    }
+
+    .doc-section h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--mint);
+      margin-top: 20px;
+    }
+
+    .doc-section p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .doc-section ul {
+      margin-left: 24px;
+      margin-bottom: 14px;
+    }
+
+    .doc-section ul li {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .doc-section strong {
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: rgba(204, 255, 0, 0.07);
+      border-left: 4px solid var(--lime);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+    }
+
+    .highlight-box p {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--mint);
+      margin: 0;
+    }
+
+    .sign-block {
+      background: var(--jungle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 52px;
+      margin-top: 60px;
+    }
+
+    .sign-block p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .sign-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 30px;
+    }
+
+    .sign-field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .sign-field label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .sign-field input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--mint);
+      font-size: 17px;
+    }
+
+    .sign-field input:focus {
+      border-color: var(--lime);
+    }
+
+    .btn-sign {
+      background: var(--lime);
+      color: var(--forest);
+      border: none;
+      padding: 20px 40px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 30px;
+      font-family: 'Manrope', sans-serif;
+      width: 100%;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all .2s;
+    }
+
+    .btn-sign:hover {
+      background: #d9ff1a;
+    }
+
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--leaf);
+      color: var(--leaf);
+      padding: 11px 26px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      float: right;
+      margin-bottom: 28px;
+      transition: all .2s;
+    }
+
+    .print-btn:hover {
+      background: var(--leaf);
+      color: var(--forest);
+    }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 38px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 21px;
+      letter-spacing: 3px;
+      color: var(--lime);
+    }
+
+    .footer-info {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .footer-links {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .footer-links a {
+      color: var(--lime);
+      text-decoration: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--black);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--moss);
+      border-radius: 3px;
+    }
+
+    @media(max-width:900px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page-hero {
+        padding: 72px 24px 56px;
+      }
+
+      .section-inner {
+        padding: 0 24px;
+      }
+
+      .form-wrap,
+      .doc-wrap {
+        padding: 56px 24px;
+      }
+
+      .field-group {
+        grid-template-columns: 1fr;
+      }
+
+      .sign-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+
+    @media print {
+
+      nav,
+      .print-btn,
+      .btn-sign,
+      .btn-submit {
+        display: none !important;
+      }
+    }
+
+    .email-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .email-item {
+      border: 1px solid var(--border);
+      border-bottom: 0;
+      background: var(--jungle);
+      overflow: hidden;
+    }
+
+    .email-item:first-child {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .email-item:last-child {
+      border-radius: 0 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .email-item:nth-child(even) {
+      background: var(--forest);
+    }
+
+    .email-header {
+      padding: 22px 28px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      user-select: none;
+      transition: background .15s;
+    }
+
+    .email-header:hover {
+      background: rgba(204, 255, 0, 0.04);
+    }
+
+    .email-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--forest);
+      background: var(--lime);
+    }
+
+    .email-meta {
+      flex: 1;
+    }
+
+    .email-timing {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .email-subject-preview {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .email-to {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .email-toggle {
+      font-size: 20px;
+      color: var(--lime);
+      transition: transform .2s;
+    }
+
+    .email-item.open .email-toggle {
+      transform: rotate(180deg);
+    }
+
+    .email-body {
+      display: none;
+      padding: 0 28px 36px 86px;
+      border-top: 1px solid var(--border);
+    }
+
+    .email-item.open .email-body {
+      display: block;
+    }
+
+    .email-meta-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .email-meta-row .lbl {
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .email-meta-row .val {
+      color: var(--mint);
+      font-weight: 600;
+    }
+
+    .email-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 18px 0;
+    }
+
+    .email-content {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--muted);
+      white-space: pre-wrap;
+    }
+
+    .email-content em {
+      color: var(--lime);
+      font-style: normal;
+      background: rgba(204, 255, 0, 0.12);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 20px;
+      transition: all .2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--lime);
+      color: var(--forest);
+      border-color: var(--lime);
+    }
+
+    .phase-label {
+      background: var(--lime);
+      color: var(--forest);
+      padding: 14px 28px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 24px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    @media(max-width:700px) {
+      .email-body {
+        padding-left: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><a href="index.html" class="nav-brand"><div class="nav-logo-svg"><svg id="wr-logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 115.13 115.13">
-  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
-  <defs>
-    <style>
-      .st0 {
-        fill: #CCFF00;
-      }
+  <nav><a href="index.html" class="nav-brand">
+      <div class="nav-logo-svg"><svg id="wr-logo" xmlns="http://www.w3.org/2000/svg" version="1.1"
+          viewBox="0 0 115.13 115.13">
+          <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+          <defs>
+            <style>
+              .st0 {
+                fill: #CCFF00;
+              }
 
-      .st1, .st2, .st3, .st4 {
-        fill: #fff;
-      }
+              .st1,
+              .st2,
+              .st3,
+              .st4 {
+                fill: #fff;
+              }
 
-      .st1, .st2, .st4 {
-        stroke-width: 1.84px;
-      }
+              .st1,
+              .st2,
+              .st4 {
+                stroke-width: 1.84px;
+              }
 
-      .st1, .st2, .st4, .st5 {
-        stroke-miterlimit: 10;
-      }
+              .st1,
+              .st2,
+              .st4,
+              .st5 {
+                stroke-miterlimit: 10;
+              }
 
-      .st1, .st4 {
-        stroke: #CCFF00;
-      }
+              .st1,
+              .st4 {
+                stroke: #CCFF00;
+              }
 
-      .st6 {
-        fill: rgba(204,255,0,0.35);
-      }
+              .st6 {
+                fill: rgba(204, 255, 0, 0.35);
+              }
 
-      .st2, .st5 {
-        stroke: #CCFF00;
-      }
+              .st2,
+              .st5 {
+                stroke: #CCFF00;
+              }
 
-      .st7 {
-        fill: #CCFF00;
-      }
+              .st7 {
+                fill: #CCFF00;
+              }
 
-      .st4 {
-        stroke-linecap: round;
-      }
+              .st4 {
+                stroke-linecap: round;
+              }
 
-      .st5 {
-        fill: none;
-        stroke-width: 4.53px;
-      }
-    </style>
-  </defs>
-  <g>
-    <path class="st5" d="M37.81,26.36c-4.55.85-28.2,16.69-26.2,42.21,2.13,27.12,24.02,31.72,29.35,35.4,1.52,1.05,24.14,18.06,49.04-4.99,0,0,8.03-4.09,11.48-10.47,1.51-2.8,1.21-10.71,1.11-10.46"/>
-    <path class="st5" d="M20.54,86.83c-6.23,3.42-9.82,1.98-13.9-2.17s-.95-10.96,6.9-13.91"/>
-  </g>
-  <ellipse class="st3" cx="96.94" cy="72.24" rx="7.1" ry="19.16"/>
-  <ellipse class="st3" cx="65.36" cy="54.56" rx="29.95" ry="34.37"/>
-  <path class="st1" d="M104.37,70.82c2.61-.26,3.46,1.04,3.13,3.81-.24,2.01-12.3,8.37-13.28,7.14"/>
-  <g>
-    <path class="st3" d="M60.12,18.87c.09,2.44-31.33-4.39-27.94-8.39,5.31-6.29,33.19-9.16,50.09,2.16s27.96,20.61,30.57,32.96c2.33,11.02-3.53,21.55-6.4,23.79-2.7,2.11-11.11,5.28-14.09,1.36"/>
-    <path class="st0" d="M61.03,18.83c-.14,2.33-4.65,1.02-6.12.88-5.27-.99-10.46-2.31-15.57-3.96-1.92-.78-8.39-2.51-7.68-5.1.23-.52.6-.76.96-1.13,2.84-2.36,6.44-3.32,9.94-4.16,7.04-1.51,14.34-1.67,21.52-.71,7.18.96,14.39,3.42,20.31,7.65,5.91,4,11.75,8.2,17.09,13.09,12.11,10.83,17.41,24.5,9.58,39.74-.9,1.64-1.87,3.21-3.29,4.65-3.01,2.51-6.76,3.66-10.64,3.85-2.02.04-4.25-.61-5.54-2.32-.31-.4-.24-.98.16-1.29.41-.32.99-.23,1.3.17,2.9,2.85,7.99.78,11.15-.78,2.31-1.14,3.4-3.21,4.59-5.46,4.82-9.34,4.06-20.4-2.4-28.69-6.27-8.44-15.03-14.56-23.66-20.51-5.6-4.09-12.19-6.44-19.03-7.81-8.99-1.61-22.85-2.31-30.62,3.11-.54.51-1.25.96-.53,1.73,4.15,3.91,21.12,7.6,26.84,6.64.06-.02.09-.05.05-.03-.03,0-.28.2-.26.51-.02-1.2,1.77-1.28,1.84-.07h0Z"/>
-  </g>
-  <g>
-    <path class="st3" d="M48.47,87.63c-.24-1.81-3.98-8.78,5.1-21.61,9.12-12.88,46.3-15.15,39.46,23.5-.95,5.4-5.24,11.27-11.61,12.29"/>
-    <path class="st7" d="M47.55,87.75c-1.17-4.38-.82-9.21.96-13.37,1.83-4.08,4.03-8.19,7.4-11.19,5.24-4.41,12.22-5.89,18.92-5.94,13.96-.69,19.88,11.2,19.44,23.54-.16,4.47-.34,9.18-2.26,13.3-1.99,4.2-5.82,7.65-10.45,8.63,0,0-.29-1.82-.29-1.82,2.06-.22,4.05-1.07,5.75-2.35,2.52-1.96,4.42-4.84,5.29-7.93.73-3.17,1.09-6.57,1.09-9.84.21-11.88-7.16-20.3-18.64-22.66-2.15-.45-4.44-.31-6.6.03-4.35.75-8.64,2.44-11.97,5.35-5.37,5.27-9.74,14.82-7.32,22.3.08.27.31.94.39,1.2,0,0,.12.51.12.51l-1.82.24h0Z"/>
-  </g>
-  <path class="st2" d="M37.54,23.39c-4.63.85-28.74,16.87-26.7,42.65,2.17,27.4,24.48,32.05,29.91,35.77,1.55,1.06,24.6,18.25,49.98-5.04,0,0,8.18-4.13,11.7-10.58,1.54-2.83-4.33.33-5.35,1.93"/>
-  <path class="st0" d="M98.03,60.72c1.98-.19.97-4.69.43-5.61s-3.33-3.15-4.23-3.01-1.27,3.49-.7,4.72c.75,1.62,2.87,4.06,4.49,3.9Z"/>
-  <g>
-    <path class="st3" d="M81.83,37.07c1.51-1.95-32.35-10.87-46.42-2.19-14.08,8.68-11.39-6.47-6.47-11.28,7.82-7.64,30.56-18.17,58.12,10.32"/>
-    <path class="st7" d="M81.11,36.5c-.18.21-.2.54-.06.76-.02-.02-.15-.12-.29-.19-4.77-2.22-10.14-3.01-15.31-3.85-10.28-1.26-21.76-2.27-30.86,3.47-3.44,2.05-9.53,3.69-10.61-1.88-.57-4.03.96-7.85,3.28-11.02,1.46-1.75,3.35-3.13,5.26-4.35,7.5-4.83,17.07-6.07,25.64-4.06,11.58,2.66,20.88,10.21,29.57,17.9,0,0-1.32,1.28-1.32,1.28-3.81-4.24-7.97-8.3-12.84-11.33-9.41-6.24-21.46-9.31-32.35-5.59-5.06,1.81-10.41,4.47-13.27,9.21-1.26,2.17-3.51,8.77.11,9.49,2.39.23,5.19-1.53,7.28-2.75,11.02-6.33,35.16-3.31,46.4,1.91.28.16.64.44.86.76.27.41.28.98-.03,1.38,0,0-1.45-1.13-1.45-1.13h0Z"/>
-  </g>
-  <path class="st6" d="M70.74,32.18c-9.12-2.3-28.43-3.26-35.78,1.96-7.24,5.14-6.52-2.05-4.27-4.93,3.57-4.57,18.86-12.83,37.65,1.09"/>
-  <path class="st2" d="M21.89,88.75c-8,2.98-15.21-.24-17.18-5.53-1.97-5.29.02-11.56,8.02-14.54"/>
-  <path class="st4" d="M94.23,82.92c1.75-2.12,8.39-4.75,9.34-4.34s.87,2.62-.29,3.14"/>
-  <path class="st4" d="M98.57,83.73s2.29-2.25,4.1-1.93.49,2.88.39,2.86"/>
-</svg></div><div class="nav-wordmark"><span class="nav-name">White Rabbit Accelerator</span><span class="nav-sub">Ashland, Oregon · Rogue Valley</span></div></a><a href="index.html" class="nav-back">← Back to Home</a></nav>
-<div class="page-hero sec-dark">
-  <div class="eyebrow">Director Toolkit</div>
-  <h1>Email<br>Sequence</h1>
-  <p>Every email template from acceptance to post-Demo Day follow-up. Click any email to expand and copy. Lime-highlighted text = fill in before sending.</p>
-</div>
-<div class="sec-light">
-<div class="doc-wrap">
-  <div class="eyebrow">Communication Templates</div>
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;letter-spacing:2px;color:var(--white);line-height:.95;margin-bottom:16px;">Complete Email Playbook</div>
-  <p style="font-size:19px;color:var(--muted);margin-bottom:52px;line-height:1.8;">20 email templates covering the full program arc — for founders, mentors, and stakeholders. Click to expand each email.</p>
-  <div class="email-list" id="emailList"></div>
-</div>
-</div><footer><div class="footer-brand">White Rabbit Accelerator</div><div class="footer-info">Ashland, Oregon · Rogue Valley · Directors: Ali Tarraf &amp; Thor Mueller<br>Applications Open Feb 25, 2026 · Cohort Starts Mar 9 · Demo Day Jun 6, 2026</div><div class="footer-links"><a href="founder-application.html">Apply</a> · <a href="mentor-agreement.html">Mentor</a></div></footer>
-<script>
-const emails = [
-  {timing:'Pre-Program · 2 Weeks Before Start',to:'Accepted Founders',subject:'🐇 Welcome to White Rabbit Accelerator — You're In!',content:`Hi [First Name],
+              .st5 {
+                fill: none;
+                stroke-width: 4.53px;
+              }
+            </style>
+          </defs>
+          <g>
+            <path class="st5"
+              d="M37.81,26.36c-4.55.85-28.2,16.69-26.2,42.21,2.13,27.12,24.02,31.72,29.35,35.4,1.52,1.05,24.14,18.06,49.04-4.99,0,0,8.03-4.09,11.48-10.47,1.51-2.8,1.21-10.71,1.11-10.46" />
+            <path class="st5" d="M20.54,86.83c-6.23,3.42-9.82,1.98-13.9-2.17s-.95-10.96,6.9-13.91" />
+          </g>
+          <ellipse class="st3" cx="96.94" cy="72.24" rx="7.1" ry="19.16" />
+          <ellipse class="st3" cx="65.36" cy="54.56" rx="29.95" ry="34.37" />
+          <path class="st1" d="M104.37,70.82c2.61-.26,3.46,1.04,3.13,3.81-.24,2.01-12.3,8.37-13.28,7.14" />
+          <g>
+            <path class="st3"
+              d="M60.12,18.87c.09,2.44-31.33-4.39-27.94-8.39,5.31-6.29,33.19-9.16,50.09,2.16s27.96,20.61,30.57,32.96c2.33,11.02-3.53,21.55-6.4,23.79-2.7,2.11-11.11,5.28-14.09,1.36" />
+            <path class="st0"
+              d="M61.03,18.83c-.14,2.33-4.65,1.02-6.12.88-5.27-.99-10.46-2.31-15.57-3.96-1.92-.78-8.39-2.51-7.68-5.1.23-.52.6-.76.96-1.13,2.84-2.36,6.44-3.32,9.94-4.16,7.04-1.51,14.34-1.67,21.52-.71,7.18.96,14.39,3.42,20.31,7.65,5.91,4,11.75,8.2,17.09,13.09,12.11,10.83,17.41,24.5,9.58,39.74-.9,1.64-1.87,3.21-3.29,4.65-3.01,2.51-6.76,3.66-10.64,3.85-2.02.04-4.25-.61-5.54-2.32-.31-.4-.24-.98.16-1.29.41-.32.99-.23,1.3.17,2.9,2.85,7.99.78,11.15-.78,2.31-1.14,3.4-3.21,4.59-5.46,4.82-9.34,4.06-20.4-2.4-28.69-6.27-8.44-15.03-14.56-23.66-20.51-5.6-4.09-12.19-6.44-19.03-7.81-8.99-1.61-22.85-2.31-30.62,3.11-.54.51-1.25.96-.53,1.73,4.15,3.91,21.12,7.6,26.84,6.64.06-.02.09-.05.05-.03-.03,0-.28.2-.26.51-.02-1.2,1.77-1.28,1.84-.07h0Z" />
+          </g>
+          <g>
+            <path class="st3"
+              d="M48.47,87.63c-.24-1.81-3.98-8.78,5.1-21.61,9.12-12.88,46.3-15.15,39.46,23.5-.95,5.4-5.24,11.27-11.61,12.29" />
+            <path class="st7"
+              d="M47.55,87.75c-1.17-4.38-.82-9.21.96-13.37,1.83-4.08,4.03-8.19,7.4-11.19,5.24-4.41,12.22-5.89,18.92-5.94,13.96-.69,19.88,11.2,19.44,23.54-.16,4.47-.34,9.18-2.26,13.3-1.99,4.2-5.82,7.65-10.45,8.63,0,0-.29-1.82-.29-1.82,2.06-.22,4.05-1.07,5.75-2.35,2.52-1.96,4.42-4.84,5.29-7.93.73-3.17,1.09-6.57,1.09-9.84.21-11.88-7.16-20.3-18.64-22.66-2.15-.45-4.44-.31-6.6.03-4.35.75-8.64,2.44-11.97,5.35-5.37,5.27-9.74,14.82-7.32,22.3.08.27.31.94.39,1.2,0,0,.12.51.12.51l-1.82.24h0Z" />
+          </g>
+          <path class="st2"
+            d="M37.54,23.39c-4.63.85-28.74,16.87-26.7,42.65,2.17,27.4,24.48,32.05,29.91,35.77,1.55,1.06,24.6,18.25,49.98-5.04,0,0,8.18-4.13,11.7-10.58,1.54-2.83-4.33.33-5.35,1.93" />
+          <path class="st0"
+            d="M98.03,60.72c1.98-.19.97-4.69.43-5.61s-3.33-3.15-4.23-3.01-1.27,3.49-.7,4.72c.75,1.62,2.87,4.06,4.49,3.9Z" />
+          <g>
+            <path class="st3"
+              d="M81.83,37.07c1.51-1.95-32.35-10.87-46.42-2.19-14.08,8.68-11.39-6.47-6.47-11.28,7.82-7.64,30.56-18.17,58.12,10.32" />
+            <path class="st7"
+              d="M81.11,36.5c-.18.21-.2.54-.06.76-.02-.02-.15-.12-.29-.19-4.77-2.22-10.14-3.01-15.31-3.85-10.28-1.26-21.76-2.27-30.86,3.47-3.44,2.05-9.53,3.69-10.61-1.88-.57-4.03.96-7.85,3.28-11.02,1.46-1.75,3.35-3.13,5.26-4.35,7.5-4.83,17.07-6.07,25.64-4.06,11.58,2.66,20.88,10.21,29.57,17.9,0,0-1.32,1.28-1.32,1.28-3.81-4.24-7.97-8.3-12.84-11.33-9.41-6.24-21.46-9.31-32.35-5.59-5.06,1.81-10.41,4.47-13.27,9.21-1.26,2.17-3.51,8.77.11,9.49,2.39.23,5.19-1.53,7.28-2.75,11.02-6.33,35.16-3.31,46.4,1.91.28.16.64.44.86.76.27.41.28.98-.03,1.38,0,0-1.45-1.13-1.45-1.13h0Z" />
+          </g>
+          <path class="st6"
+            d="M70.74,32.18c-9.12-2.3-28.43-3.26-35.78,1.96-7.24,5.14-6.52-2.05-4.27-4.93,3.57-4.57,18.86-12.83,37.65,1.09" />
+          <path class="st2" d="M21.89,88.75c-8,2.98-15.21-.24-17.18-5.53-1.97-5.29.02-11.56,8.02-14.54" />
+          <path class="st4" d="M94.23,82.92c1.75-2.12,8.39-4.75,9.34-4.34s.87,2.62-.29,3.14" />
+          <path class="st4" d="M98.57,83.73s2.29-2.25,4.1-1.93.49,2.88.39,2.86" />
+        </svg></div>
+      <div class="nav-wordmark"><span class="nav-name">White Rabbit Accelerator</span><span class="nav-sub">Ashland,
+          Oregon · Rogue Valley</span></div>
+    </a><a href="index.html" class="nav-back">← Back to Home</a></nav>
+  <div class="page-hero sec-dark">
+    <div class="eyebrow">Director Toolkit</div>
+    <h1>Email<br>Sequence</h1>
+    <p>Every email template from acceptance to post-Demo Day follow-up. Click any email to expand and copy.
+      Lime-highlighted text = fill in before sending.</p>
+  </div>
+  <div class="sec-light">
+    <div class="doc-wrap">
+      <div class="eyebrow">Communication Templates</div>
+      <div
+        style="font-family:'Bebas Neue',sans-serif;font-size:56px;letter-spacing:2px;color:var(--white);line-height:.95;margin-bottom:16px;">
+        Complete Email Playbook</div>
+      <p style="font-size:19px;color:var(--muted);margin-bottom:52px;line-height:1.8;">20 email templates covering the
+        full program arc — for founders, mentors, and stakeholders. Click to expand each email.</p>
+      <div class="email-list" id="emailList"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-brand">White Rabbit Accelerator</div>
+    <div class="footer-info">Ashland, Oregon · Rogue Valley · Directors: Ali Tarraf &amp; Thor Mueller<br>Applications
+      Open Feb 25, 2026 · Cohort Starts Mar 9 · Demo Day Jun 6, 2026</div>
+    <div class="footer-links"><a href="founder-application.html">Apply</a> · <a href="mentor-agreement.html">Mentor</a>
+    </div>
+  </footer>
+  <script>
+    const emails = [
+      {
+        timing: 'Pre-Program · 2 Weeks Before Start', to: 'Accepted Founders', subject: '🐇 Welcome to White Rabbit Accelerator — You\'re In!', content: `Hi [First Name],
 
 Congratulations — you've been accepted into the White Rabbit Accelerator, Cohort 1.
 
@@ -236,7 +1054,8 @@ Questions? Reply to this email or message us on Slack.
 See you March 9,
 Ali & Thor
 White Rabbit Accelerator`},
-  {timing:'Pre-Program · 1 Week Before Start',to:'Accepted Founders',subject:'White Rabbit Kickoff — What to Bring & Expect',content:`Hi [First Name],
+      {
+        timing: 'Pre-Program · 1 Week Before Start', to: 'Accepted Founders', subject: 'White Rabbit Kickoff — What to Bring & Expect', content: `Hi [First Name],
 
 Kickoff is one week away! Here's everything you need to know:
 
@@ -262,7 +1081,8 @@ Can't make it? Contact us immediately — attendance at kickoff is required.
 
 See you soon,
 Ali & Thor`},
-  {timing:'Week 1 · Day After Kickoff',to:'All Founders',subject:'Your First Week — What To Do Now',content:`Hi [First Name],
+      {
+        timing: 'Week 1 · Day After Kickoff', to: 'All Founders', subject: 'Your First Week — What To Do Now', content: `Hi [First Name],
 
 What a great kickoff yesterday! The energy in that room was exactly what we hoped for.
 
@@ -279,7 +1099,8 @@ REMINDERS:
 → SMART Goals (with mentor sign-off): Week 4
 
 Ali & Thor`},
-  {timing:'Week 3 · Baseline Reminder',to:'All Founders',subject:'Reminder: Business Baseline Due This Week',content:`Hi [First Name],
+      {
+        timing: 'Week 3 · Baseline Reminder', to: 'All Founders', subject: 'Reminder: Business Baseline Due This Week', content: `Hi [First Name],
 
 Quick reminder: your Business Baseline is due by [date].
 
@@ -290,7 +1111,8 @@ This is one of the most important documents of the program — not because we're
 If you have questions or want to talk through any section, reach out to your mentor or reply to this email.
 
 Ali & Thor`},
-  {timing:'Week 4 · SMART Goals',to:'All Founders',subject:'Week 4 Check-In — Are Your SMART Goals Set?',content:`Hi [First Name],
+      {
+        timing: 'Week 4 · SMART Goals', to: 'All Founders', subject: 'Week 4 Check-In — Are Your SMART Goals Set?', content: `Hi [First Name],
 
 By the end of this week, you and your mentor should have agreed on your SMART goals for the program.
 
@@ -303,7 +1125,8 @@ Good: "I will have 10 paying customers by May 31, with at least $2,000 in revenu
 If you haven't locked in your goals with your mentor yet — do it this week. These goals will guide your next 12 weeks.
 
 Ali & Thor`},
-  {timing:'Month 2 Kickoff · Week 5',to:'All Founders',subject:'Month 2 Begins — Customer Discovery Time',content:`Hi [First Name],
+      {
+        timing: 'Month 2 Kickoff · Week 5', to: 'All Founders', subject: 'Month 2 Begins — Customer Discovery Time', content: `Hi [First Name],
 
 Month 1 is done. You've got your baseline, your SMART goals, and your mentor relationship underway. Now it's time to get out of the building.
 
@@ -317,7 +1140,8 @@ Your mentor will help you prep for these conversations. Come to your next 1:1 re
 Month 2 All-Hands: [date, time, location]
 
 Ali & Thor`},
-  {timing:'Week 7 · Mid-Month Check-In',to:'All Founders',subject:'Week 7 — How Are the Customer Conversations Going?',content:`Hi [First Name],
+      {
+        timing: 'Week 7 · Mid-Month Check-In', to: 'All Founders', subject: 'Week 7 — How Are the Customer Conversations Going?', content: `Hi [First Name],
 
 We're halfway through Month 2. Quick check-in:
 
@@ -328,7 +1152,8 @@ If you're at 0: this is your nudge. Don't wait for the perfect moment. The conve
 If you're stuck on who to talk to, post in Slack or bring it to your mentor. We can help you find the right people.
 
 Ali & Thor`},
-  {timing:'Week 8 · MVP Milestone',to:'All Founders',subject:'Week 8 — MVP Check',content:`Hi [First Name],
+      {
+        timing: 'Week 8 · MVP Milestone', to: 'All Founders', subject: 'Week 8 — MVP Check', content: `Hi [First Name],
 
 Week 8 milestone check: How is your MVP coming along?
 
@@ -344,7 +1169,8 @@ Bring your MVP update to your next mentor 1:1.
 Also: if you identified any grant opportunities, now is a good time to start the application.
 
 Ali & Thor`},
-  {timing:'Month 3 Kickoff · Week 9',to:'All Founders',subject:'Month 3 — Time to Get Traction',content:`Hi [First Name],
+      {
+        timing: 'Month 3 Kickoff · Week 9', to: 'All Founders', subject: 'Month 3 — Time to Get Traction', content: `Hi [First Name],
 
 Month 3. This is where it gets real.
 
@@ -365,7 +1191,8 @@ Pick your traction metric. Put it on the wall. Go get it.
 Month 3 All-Hands: [date, time, location]
 
 Ali & Thor`},
-  {timing:'Week 11 · Traction Push',to:'All Founders',subject:'Week 11 — What's Your Traction Number?',content:`Hi [First Name],
+      {
+        timing: 'Week 11 · Traction Push', to: 'All Founders', subject: 'Week 11 — What\'s Your Traction Number?', content: `Hi [First Name],
 
 We're past the halfway mark. One question: what's your traction number right now?
 
@@ -376,7 +1203,8 @@ If your traction number is 0 and you're not sure why: that's the most important 
 Demo Day is [X] weeks away.
 
 Ali & Thor`},
-  {timing:'Month 4 Kickoff · Week 13',to:'All Founders',subject:'Month 4 — Final Stretch. Pitch Time.',content:`Hi [First Name],
+      {
+        timing: 'Month 4 Kickoff · Week 13', to: 'All Founders', subject: 'Month 4 — Final Stretch. Pitch Time.', content: `Hi [First Name],
 
 Month 4. The last stretch before Demo Day on June 6.
 
@@ -396,7 +1224,8 @@ Your pitch deck should answer 5 questions:
 You have the answers. Now let's build the deck.
 
 Ali & Thor`},
-  {timing:'Week 14 · Deck Deadline',to:'All Founders',subject:'Pitch Deck Due This Week — Reminder',content:`Hi [First Name],
+      {
+        timing: 'Week 14 · Deck Deadline', to: 'All Founders', subject: 'Pitch Deck Due This Week — Reminder', content: `Hi [First Name],
 
 Your pitch deck draft is due to your mentor by [date].
 
@@ -407,7 +1236,8 @@ Once your mentor reviews it, you'll get notes within 24 hours. Use those notes t
 → Submit your deck to: [mentor email or Slack]
 
 Ali & Thor`},
-  {timing:'Week 15 · Rehearsal 1',to:'All Founders',subject:'Rehearsal 1 This Week — Here's What to Expect',content:`Hi [First Name],
+      {
+        timing: 'Week 15 · Rehearsal 1', to: 'All Founders', subject: 'Rehearsal 1 This Week — Here\'s What to Expect', content: `Hi [First Name],
 
 Rehearsal 1 is this week. Here's what to expect:
 
@@ -423,7 +1253,8 @@ Show up. Give it everything. Take the notes. Fix what you can.
 → Rehearsal details: [date, time, location]
 
 Ali & Thor`},
-  {timing:'Week 16 · Final Week',to:'All Founders',subject:'Final Week — Demo Day Checklist',content:`Hi [First Name],
+      {
+        timing: 'Week 16 · Final Week', to: 'All Founders', subject: 'Final Week — Demo Day Checklist', content: `Hi [First Name],
 
 Demo Day is Saturday. Here's your final checklist:
 
@@ -446,7 +1277,8 @@ DEMO DAY LOGISTICS:
 You've earned this. Go show Rogue Valley what you built.
 
 Ali & Thor`},
-  {timing:'Demo Day · Morning Of',to:'All Founders',subject:'It's Demo Day 🐇',content:`Hi [First Name],
+      {
+        timing: 'Demo Day · Morning Of', to: 'All Founders', subject: 'It\'s Demo Day 🐇', content: `Hi [First Name],
 
 Today is Demo Day.
 
@@ -463,7 +1295,8 @@ A few reminders:
 We're proud of you. See you at [venue address].
 
 Ali & Thor`},
-  {timing:'Day After Demo Day',to:'All Founders',subject:'You Did It — What Happens Next',content:`Hi [First Name],
+      {
+        timing: 'Day After Demo Day', to: 'All Founders', subject: 'You Did It — What Happens Next', content: `Hi [First Name],
 
 Yesterday was something special.
 
@@ -480,7 +1313,8 @@ Stay connected on Slack. Ali and Thor are still here.
 With gratitude,
 Ali & Thor
 White Rabbit Accelerator Cohort 1`},
-  {timing:'1 Week After Demo Day',to:'All Founders',subject:'Feedback Request — Help Us Improve',content:`Hi [First Name],
+      {
+        timing: '1 Week After Demo Day', to: 'All Founders', subject: 'Feedback Request — Help Us Improve', content: `Hi [First Name],
 
 One week out from Demo Day — how are you feeling?
 
@@ -497,7 +1331,8 @@ A few questions we're asking:
 No filter needed. We can handle honesty.
 
 Ali & Thor`},
-  {timing:'3 Weeks Before Demo Day',to:'Community Stakeholders',subject:'You're Invited: White Rabbit Accelerator Demo Day — June 6',content:`Dear [Name],
+      {
+        timing: '3 Weeks Before Demo Day', to: 'Community Stakeholders', subject: 'You\'re Invited: White Rabbit Accelerator Demo Day — June 6', content: `Dear [Name],
 
 On Saturday, June 6, 2026, the White Rabbit Accelerator will host its first-ever Demo Day in Ashland, Oregon.
 
@@ -519,7 +1354,8 @@ We hope to see you there.
 
 Ali Tarraf & Thor Mueller
 White Rabbit Accelerator`},
-  {timing:'Post-Demo Day · 1 Week After',to:'Mentors',subject:'Thank You — White Rabbit Cohort 1 Mentors',content:`Dear [Mentor Name],
+      {
+        timing: 'Post-Demo Day · 1 Week After', to: 'Mentors', subject: 'Thank You — White Rabbit Cohort 1 Mentors', content: `Dear [Mentor Name],
 
 Demo Day is behind us, and we've had a week to reflect.
 
@@ -536,20 +1372,21 @@ Thank you for giving your time to the Rogue Valley.
 With deep appreciation,
 Ali Tarraf & Thor Mueller
 White Rabbit Accelerator`}
-];
+    ];
 
-function buildEmails(){
-  const list = document.getElementById('emailList');
-  emails.forEach((em,i)=>{
-    const div = document.createElement('div');
-    div.className = 'email-item';
-    div.innerHTML = `<div class="email-header" onclick="toggleEmail(${i})"><div class="email-num">${String(i+1).padStart(2,'0')}</div><div class="email-meta"><div class="email-timing">${em.timing}</div><div class="email-subject-preview">${em.subject}</div><div class="email-to">To: ${em.to}</div></div><div class="email-toggle">▾</div></div><div class="email-body"><div style="padding-top:22px"><div class="email-meta-row"><span class="lbl">To:</span><span class="val">${em.to}</span></div><div class="email-meta-row"><span class="lbl">Subject:</span><span class="val">${em.subject}</span></div><div class="email-meta-row"><span class="lbl">From:</span><span class="val">Ali Tarraf & Thor Mueller</span></div></div><hr class="email-divider"><div class="email-content">${em.content.replace(/\[([^\]]+)\]/g,'<em>[$1]</em>')}</div><button class="copy-btn" onclick="copyEmail(${i})">Copy Email</button></div>`;
-    list.appendChild(div);
-  });
-}
-function toggleEmail(i){document.querySelectorAll('.email-item')[i].classList.toggle('open');}
-function copyEmail(i){const t=`Subject: ${emails[i].subject}\nTo: ${emails[i].to}\n\n${emails[i].content}`;navigator.clipboard.writeText(t).then(()=>alert('Email copied!'));}
-buildEmails();
-</script>
+    function buildEmails() {
+      const list = document.getElementById('emailList');
+      emails.forEach((em, i) => {
+        const div = document.createElement('div');
+        div.className = 'email-item';
+        div.innerHTML = `<div class="email-header" onclick="toggleEmail(${i})"><div class="email-num">${String(i + 1).padStart(2, '0')}</div><div class="email-meta"><div class="email-timing">${em.timing}</div><div class="email-subject-preview">${em.subject}</div><div class="email-to">To: ${em.to}</div></div><div class="email-toggle">▾</div></div><div class="email-body"><div style="padding-top:22px"><div class="email-meta-row"><span class="lbl">To:</span><span class="val">${em.to}</span></div><div class="email-meta-row"><span class="lbl">Subject:</span><span class="val">${em.subject}</span></div><div class="email-meta-row"><span class="lbl">From:</span><span class="val">Ali Tarraf & Thor Mueller</span></div></div><hr class="email-divider"><div class="email-content">${em.content.replace(/\[([^\]]+)\]/g, '<em>[$1]</em>')}</div><button class="copy-btn" onclick="copyEmail(${i})">Copy Email</button></div>`;
+        list.appendChild(div);
+      });
+    }
+    function toggleEmail(i) { document.querySelectorAll('.email-item')[i].classList.toggle('open'); }
+    function copyEmail(i) { const t = `Subject: ${emails[i].subject}\nTo: ${emails[i].to}\n\n${emails[i].content}`; navigator.clipboard.writeText(t).then(() => alert('Email copied!')); }
+    buildEmails();
+  </script>
 </body>
+
 </html>
