@@ -1533,6 +1533,159 @@
       border-color: var(--forest);
     }
 
+    /* ── POST-COHORT PHASE CARD ── */
+    .post-phase {
+      grid-column: 1/-1;
+      background: var(--jungle) !important;
+      border: 2px solid rgba(204,255,0,.4) !important;
+    }
+
+    .post-phase:hover {
+      background: var(--moss) !important;
+    }
+
+    .post-phase .ph-num {
+      color: rgba(204,255,0,.18);
+    }
+
+    .post-phase .ph-tag {
+      color: var(--lime);
+    }
+
+    .post-phase h3 {
+      color: var(--white);
+      font-size: 36px;
+    }
+
+    /* ── QUARTERLY MILESTONE ROWS ── */
+    .m-quarterly {
+      border-left: 3px solid rgba(204,255,0,.25) !important;
+      background: rgba(13,38,18,.6) !important;
+    }
+
+    .m-quarterly:hover {
+      background: var(--moss) !important;
+    }
+
+    .m-quarterly .m-week {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ── POST-COHORT / ALUMNI SECTION ── */
+    .quarterly-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 52px;
+    }
+
+    .q-card {
+      background: var(--jungle);
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      transition: background .2s;
+    }
+
+    .q-card:hover {
+      background: var(--moss);
+    }
+
+    .q-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--lime);
+      opacity: .2;
+      margin-bottom: 4px;
+    }
+
+    .q-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .q-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .q-when {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .q-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .impact-band {
+      background: rgba(204,255,0,.05);
+      border: 1px solid rgba(204,255,0,.2);
+      border-radius: 8px;
+      padding: 44px 52px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .impact-band-copy h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .impact-band-copy p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .impact-metric {
+      border-left: 2px solid rgba(204,255,0,.25);
+      padding-left: 24px;
+    }
+
+    .impact-metric-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      letter-spacing: 2px;
+      color: var(--lime);
+      line-height: 1;
+    }
+
+    .impact-metric-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .impact-metric-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
     @media(max-width:1100px) {
       .hero {
         grid-template-columns: 1fr;
@@ -1549,6 +1702,15 @@
 
       .four-col-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .quarterly-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .impact-band {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
     }
 
@@ -1568,6 +1730,10 @@
       .m-owner {
         display: none;
       }
+
+      .quarterly-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -1582,7 +1748,7 @@
           Oregon · Rogue Valley</span></div>
     </a>
     <div class="nav-links"><a href="#insights">Insights</a><a href="#phases">Program</a><a
-        href="#resources">Resources</a><a href="#milestones">Milestones</a><a href="#forms">Documents</a><a
+        href="#resources">Resources</a><a href="#milestones">Milestones</a><a href="#alumni">Alumni</a><a href="#forms">Documents</a><a
         href="founder-application.html" class="nav-cta">Apply Now</a></div>
   </nav>
   <!-- HERO -->
@@ -1592,7 +1758,7 @@
         <div class="hero-dot"></div>Cohort 1 · Applications Open March 26, 2026
       </div>
       <h1>Where<br><em>Small Town</em>Talent<br>Takes Off.</h1>
-      <p class="hero-desc">White Rabbit Accelerator is a 4-month program investing in Rogue Valley entrepreneurs.
+      <p class="hero-desc">White Rabbit Accelerator is a 4-month program investing in Rogue Valley entrepreneurs — plus 12 months of post-cohort quarterly board meetings to keep graduates accountable and growing.
         Mentors, makerspaces, co-working, and a community that shows up — right here in Ashland.</p>
       <div class="hero-btns">
         <a href="founder-application.html" class="btn-primary">Apply as Founder</a>
@@ -1727,9 +1893,8 @@
     <div class="section-inner">
       <span class="eyebrow">The Journey</span>
       <div class="rule"></div>
-      <div class="section-title">4 MONTHS.<br>6 PHASES.</div>
-      <p class="section-sub">A structured, milestone-driven journey from application to Demo Day — with support at every
-        step.</p>
+      <div class="section-title">4 MONTHS.<br>7 PHASES.</div>
+      <p class="section-sub">A structured, milestone-driven journey from application to Demo Day — plus 12 months of post-cohort quarterly board meetings so graduates stay accountable long after the program ends.</p>
       <div class="two-col-grid">
         <div class="phase-card">
           <div class="ph-num">0</div>
@@ -1792,6 +1957,14 @@
             Stakeholders, mentors, local press, and community all in the room.</p>
           <div class="ph-tags"><span class="ph-tag-pill">5-Min Pitches</span><span class="ph-tag-pill">Community
               Q&A</span><span class="ph-tag-pill">Networking</span><span class="ph-tag-pill">Awards</span></div>
+        </div>
+        <div class="phase-card post-phase">
+          <div class="ph-num">+</div>
+          <span class="ph-tag">Post-Program · 12 Months</span>
+          <h3>Post-Cohort Quarterly</h3>
+          <p class="ph-week">Sep 2026 · Dec 2026 · Mar 2027 · Jun 2027</p>
+          <p>Every graduate commits to four 1-hour quarterly "Board Meetings" over the 12 months following Demo Day. We track progress against the SMART goals set in Month 1, measure economic impact (jobs created, revenue growth), and use that data to secure future grants for the accelerator.</p>
+          <div class="ph-tags"><span class="ph-tag-pill">4 Board Meetings</span><span class="ph-tag-pill">SMART Goal Review</span><span class="ph-tag-pill">Economic Impact</span><span class="ph-tag-pill">Grant Data</span></div>
         </div>
       </div>
     </div>
@@ -1886,8 +2059,7 @@
       <span class="eyebrow">Key Gates</span>
       <div class="rule"></div>
       <div class="section-title">PROGRAM<br>MILESTONES.</div>
-      <p class="section-sub">11 key checkpoints from kickoff to Demo Day — so every founder stays on track and
-        accountable.</p>
+      <p class="section-sub">15 key checkpoints from kickoff through your first year post-program — so every founder stays on track and accountable long after Demo Day.</p>
       <div class="milestones-list">
         <div class="milestone-row">
           <div class="m-week">Week 1</div>
@@ -1980,12 +2152,100 @@
           </div>
           <div class="m-owner">All</div>
         </div>
+        <div class="milestone-row m-quarterly">
+          <div class="m-week">Q1 · Sep 2026</div>
+          <div>
+            <div class="m-title">Post-Cohort Board Meeting #1</div>
+            <div class="m-desc">3-month check-in. Review SMART goal progress, early traction metrics, and immediate post-program obstacles.</div>
+          </div>
+          <div class="m-owner">Director</div>
+        </div>
+        <div class="milestone-row m-quarterly">
+          <div class="m-week">Q2 · Dec 2026</div>
+          <div>
+            <div class="m-title">Post-Cohort Board Meeting #2</div>
+            <div class="m-desc">6-month check-in. Measure revenue growth and jobs created. Document economic impact for grant reporting.</div>
+          </div>
+          <div class="m-owner">Director</div>
+        </div>
+        <div class="milestone-row m-quarterly">
+          <div class="m-week">Q3 · Mar 2027</div>
+          <div>
+            <div class="m-title">Post-Cohort Board Meeting #3</div>
+            <div class="m-desc">9-month check-in. Assess growth trajectory, partnerships formed, and capital raised since Demo Day.</div>
+          </div>
+          <div class="m-owner">Director</div>
+        </div>
+        <div class="milestone-row m-quarterly">
+          <div class="m-week">Q4 · Jun 2027</div>
+          <div>
+            <div class="m-title">Post-Cohort Board Meeting #4</div>
+            <div class="m-desc">12-month final review. Full economic impact report: jobs created, revenue growth, community contribution. Data used for future grant applications.</div>
+          </div>
+          <div class="m-owner">Director</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMS — DARK -->
-  <section class="sec-dark section-pad" id="forms">
+  <!-- ALUMNI / POST-COHORT — DARK -->
+  <section class="sec-dark section-pad" id="alumni">
+    <div class="section-inner">
+      <span class="eyebrow">The Commitment Continues</span>
+      <div class="rule"></div>
+      <div class="section-title">BEYOND<br>DEMO DAY.</div>
+      <p class="section-sub">Graduation isn't the finish line. Every White Rabbit graduate commits to four quarterly board meetings over 12 months — keeping SMART goals alive and building the economic data that funds future cohorts.</p>
+      <div class="quarterly-grid">
+        <div class="q-card">
+          <div class="q-num">Q1</div>
+          <span class="q-label">3 Months Post-Program · Sep 2026</span>
+          <div class="q-title">Early Traction Review</div>
+          <div class="q-when">1-Hour Board Meeting · Remote or In-Person</div>
+          <p class="q-desc">First look at post-Demo Day momentum. Where are you vs. your SMART goals? What's working, what stalled, and what do you need in the next 90 days?</p>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q2</div>
+          <span class="q-label">6 Months Post-Program · Dec 2026</span>
+          <div class="q-title">Growth &amp; Impact Check</div>
+          <div class="q-when">1-Hour Board Meeting · Remote or In-Person</div>
+          <p class="q-desc">Midpoint review. Revenue growth, jobs created or retained, and partnerships formed. This data goes directly into grant applications for Cohort 2.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q3</div>
+          <span class="q-label">9 Months Post-Program · Mar 2027</span>
+          <div class="q-title">Capital &amp; Scale Review</div>
+          <div class="q-when">1-Hour Board Meeting · Remote or In-Person</div>
+          <p class="q-desc">Assess funding raised, team growth, and community impact. Identify any pivots and reset goals for the final quarter of the accountability window.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q4</div>
+          <span class="q-label">12 Months Post-Program · Jun 2027</span>
+          <div class="q-title">Full-Year Impact Report</div>
+          <div class="q-when">1-Hour Board Meeting · Remote or In-Person</div>
+          <p class="q-desc">The complete picture. Jobs created, revenue growth, capital raised, community contribution. This report is the foundation for every future grant the accelerator applies for.</p>
+        </div>
+      </div>
+      <div class="impact-band">
+        <div class="impact-band-copy">
+          <h3>Why We Track Economic Impact</h3>
+          <p>The Rogue Valley's economic development depends on measurable results. Every job created, every dollar of new revenue, every partnership formed by a White Rabbit graduate is documented and reported. This data makes the accelerator fundable — so more founders get the support you received.</p>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">Jobs</div>
+          <div class="impact-metric-label">Created &amp; Retained</div>
+          <p class="impact-metric-desc">Tracked quarterly across every graduate. Reported to SOREDI, city, and county grant programs.</p>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">Revenue</div>
+          <div class="impact-metric-label">Growth Since Baseline</div>
+          <p class="impact-metric-desc">Measured against the Business Baseline set in Week 2–3. Real numbers, real proof of program ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMS — LIGHT -->
+  <section class="sec-light section-pad" id="forms">
     <div class="section-inner">
       <span class="eyebrow">Documents &amp; Templates</span>
       <div class="rule"></div>
