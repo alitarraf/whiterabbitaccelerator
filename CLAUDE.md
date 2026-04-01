@@ -38,12 +38,23 @@ Founder can cancel all future equity obligations for a **flat $6,000** within 2 
 ### Mentor Compensation — Internal to WRA
 Founders deal only with WRA. The internal split of any proceeds or buyback fees to mentors is managed solely by program directors based on hours logged + founder ratings. Founders are not exposed to mentor complexity.
 
-**No direct claim against founders:** Mentors have no direct legal claim against any founder or startup. The Community Stake is held solely by WRA. Both the founder agreement and mentor agreement now state this explicitly — the founder agreement says "mentors have no direct legal claim against the Founder," and the mentor agreement says "your contractual relationship is with White Rabbit Accelerator only." This closes the "designated mentors" legal exposure where a litigious founder might ask who holds equity at signing.
+**Internal Payout Policy (documented in mentor agreement):**
+- All proceeds from the 3% Community Stake split **50% WRA / 50% qualifying Mentor Pool**
+- A mentor **qualifies** by: (a) logging 20+ hours with that startup, AND (b) maintaining a minimum **3/5 founder rating**
+- Distribution within the qualifying pool is proportional using the formula: **Hours × Rating**
+- Example: 30 hrs × 4 rating = 120 pts; 20 hrs × 5 rating = 100 pts. Each mentor's share = their points ÷ total pool points.
+- Mentors below the 20-hour or 3/5 rating threshold receive zero — not a partial amount.
 
-**Mentor pool rules (internal WRA document, not shown to founders):**
+**Hour minimum:** 20 hours per startup (≈ 1.5 hrs/week over 14 weeks). Lowered from 25 to avoid penalizing busy local professionals and prevent log-padding. Framed as a "Give First" reward, not a job metric.
+
+**Confidential founder ratings:** Founder feedback/ratings are shared only with Program Directors — never with mentors. Protects honest feedback when mentors are prominent community figures (e.g. bank VPs, major business owners).
+
+**No direct claim against founders:** Mentors have no direct legal claim against any founder or startup. The Community Stake is held solely by WRA. Both the founder agreement and mentor agreement state this explicitly. Closes the "designated mentors" legal exposure.
+
+**Mentor pool rules:**
 - Cap: ~10 mentors per cohort
-- Minimum: 25 hours per startup for any equity eligibility
-- Allocation: hours + founder ratings; top contributors prioritized; poor performers get zero
+- Minimum: 20 hours + 3/5 rating per startup for any equity eligibility
+- Allocation formula: Hours × Rating (proportional)
 - Vesting mirrors the startup's milestones
 
 ### Application Fee
