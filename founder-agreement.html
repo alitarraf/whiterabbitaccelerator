@@ -574,15 +574,23 @@
       font-weight: 400;
     }
 
-    .sign-field input {
+    .sign-field input:not([type="checkbox"]) {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--mint);
       font-size: 17px;
     }
 
-    .sign-field input:focus {
+    .sign-field input:not([type="checkbox"]):focus {
       border-color: var(--lime);
+    }
+
+    .sign-field input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--lime);
+      cursor: pointer;
     }
 
     .btn-sign {
@@ -825,7 +833,7 @@
   <div class="page-hero sec-dark">
     <div class="eyebrow">Program Document</div>
     <h1>Founder<br>Agreement</h1>
-    <p>White Rabbit Accelerator · Cohort 1 · April 7 – July 11, 2026 · Ashland, Oregon</p>
+    <p>White Rabbit Accelerator · Cohort 1 · May 5 – August 8, 2026 · Ashland, Oregon</p>
   </div>
   <div class="sec-light">
     <div class="doc-wrap">
@@ -838,10 +846,10 @@
 
       <div class="doc-section">
         <h2>1. Program Overview</h2>
-        <p>The White Rabbit Accelerator is a 4-month cohort-based program running from <strong>April 7 to July 11,
+        <p>The White Rabbit Accelerator is a 4-month cohort-based program running from <strong>May 5 to August 8,
             2026</strong> in Ashland, Oregon. The program provides mentorship, access to local resources, peer learning,
           and community connections to early-stage entrepreneurs in the Rogue Valley.</p>
-        <p>The program concludes with a public <strong>Demo Day on Saturday, July 11, 2026</strong>, where founders
+        <p>The program concludes with a public <strong>Demo Day on Saturday, August 8, 2026</strong>, where founders
           present to the community, stakeholders, and supporters.</p>
       </div>
       <div class="doc-section">
@@ -852,7 +860,7 @@
             assigned mentor. Provide 24 hours notice if you must reschedule.</li>
           <li><strong>Monthly All-Hands Meetups:</strong> Attend all four cohort-wide meetups (approximately 2 hours
             each, held at end of months 1–4).</li>
-          <li><strong>Demo Day:</strong> Participate fully in Demo Day on July 11, 2026, including at least one
+          <li><strong>Demo Day:</strong> Participate fully in Demo Day on August 8, 2026, including at least one
             rehearsal
             with the mentor panel and one peer rehearsal.</li>
           <li><strong>Milestone Deliverables:</strong> Complete all program milestones on schedule, including Business
@@ -868,7 +876,7 @@
       <div class="doc-section">
         <h2>3. What the Program Provides</h2>
         <ul>
-          <li>Weekly 1:1 mentor sessions (55 minutes each) for 16 weeks</li>
+          <li>Weekly 1:1 mentor sessions (55 minutes each) for 14 weeks</li>
           <li>Access to Talent Makerspace, SOREDI Innovation Hub, and White Rabbit Co-working Space</li>
           <li>Warm networking introductions to Rogue Valley stakeholders and business community</li>
           <li>Peer cohort learning and roundtables</li>
@@ -877,15 +885,14 @@
           <li>Case-by-case access to small grant applications and support</li>
           <li>Inclusion in White Rabbit Accelerator alumni network</li>
         </ul>
-        <p>The program does not provide equity investment, salary, or guaranteed funding outcomes.</p>
+        <p>The program does not provide cash investment, salary, loans, or guaranteed funding outcomes. In exchange for services rendered, the program receives a Community Stake as described in Section 7.</p>
       </div>
       <div class="doc-section">
         <h2>4. Intellectual Property</h2>
         <p>The Founder retains <strong>full ownership</strong> of all intellectual property (IP) developed during the
           program. White Rabbit Accelerator makes no claim on the Founder's business, products, ideas, or any other IP
           created during or after the program.</p>
-        <p>Mentors and program staff may provide advice and feedback, but this does not create any ownership interest in
-          the Founder's venture.</p>
+        <p>Mentors and program staff may provide advice and feedback. This does not create any claim on the Founder's intellectual property, products, or ideas. The Community Stake in Section 7 represents a contractual right to company equity value only — not a claim on any specific IP, product, or technology.</p>
       </div>
       <div class="doc-section">
         <h2>5. Confidentiality</h2>
@@ -902,25 +909,57 @@
           by written request.</p>
       </div>
       <div class="doc-section">
-        <h2>7. Equity &amp; Financial Terms</h2>
-        <p>The White Rabbit Accelerator <strong>does not take equity</strong> in participating companies. Participation
-          in the program is provided at no cost to accepted founders for Cohort 1. Any future fees or equity
-          arrangements will be disclosed separately and require a new written agreement.</p>
+        <h2>7. Community Stake &amp; Financial Terms</h2>
+
+        <p><strong>The Community Stake (3%)</strong><br>
+        In exchange for program services, the Founder grants White Rabbit Accelerator a contractual right to <strong>three percent (3%) of the Company's equity value</strong>. No actual membership units or shares are issued at this time. This right is held solely by White Rabbit Accelerator — mentors have no direct legal claim against the Founder and are compensated internally by the Program at its sole discretion. This right remains a contract-only obligation until a Trigger Event occurs.</p>
+
+        <p><strong>Trigger Events</strong><br>
+        This 3% interest converts into actual ownership or a cash payment upon any of the following:</p>
+        <ul>
+          <li><strong>Liquidity Event</strong> — sale of the company, merger, or IPO: White Rabbit Accelerator receives 3% of net proceeds.</li>
+          <li><strong>Equity Financing</strong> — if the company converts to a C-Corp to raise professional venture capital: White Rabbit Accelerator will be issued 3% of post-money shares at that time.</li>
+          <li><strong>Revenue Milestone</strong> — if the company achieves <strong>$150,000 or more in cumulative gross revenue</strong> within 36 months of Demo Day: White Rabbit Accelerator has the right to request a flat, one-time <strong>Success Fee of $6,000</strong>, which fully extinguishes this agreement.</li>
+        </ul>
+        <p style="font-size:15px;color:var(--muted);margin-top:8px;">The first Trigger Event to occur shall take precedence and satisfy all obligations under this Section. If multiple triggers occur simultaneously, White Rabbit Accelerator shall elect which applies.</p>
+
+        <p><strong>Vesting Schedule</strong></p>
+        <ul>
+          <li><strong>1.5%</strong> vests immediately upon successful completion of Demo Day (August 8, 2026).</li>
+          <li><strong>1.5%</strong> vests upon the earlier of: (a) the company achieving <strong>$5,000 in cumulative gross revenue</strong>, verified by bank statement, payment processor report, or invoices (Founder to provide proof upon request); or (b) the company <strong>raising $50,000 or more</strong> in external funding from non-founders (e.g., grants, angel investment, pre-seed round, or equivalent).</li>
+          <li>If neither milestone is achieved within <strong>24 months of Demo Day</strong>, the second 1.5% remains unvested and is forfeited.</li>
+        </ul>
+
+        <p><strong>Clean Break Buyback Option</strong><br>
+        To ensure the Founder retains long-term control of their local business, the Founder has the exclusive right — for <strong>two (2) years following Demo Day</strong> — to cancel all future equity obligations under this agreement for a flat <strong>Success Fee of $6,000 USD</strong>. This replaces any complex valuation math with a simple, fixed exit price that is fair for both parties. After two years, this buyback option expires.</p>
+
+        <p><strong>Mentor Allocation</strong><br>
+        The Founder deals only with White Rabbit Accelerator. The internal distribution of any future proceeds or buyback fees to mentors is managed solely by the Program Directors based on mentor contribution metrics (hours logged + founder ratings). The Founder has no obligations to individual mentors under this agreement.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>8. Application &amp; Acceptance Fee</h2>
+        <p>A one-time <strong>$500 fee</strong> is required to confirm your spot in the cohort. This fee covers program operations (Zoom, venue, coffee, shared resources, communications).</p>
+        <ul>
+          <li>If you are <strong>not accepted</strong> after the interview phase, any pre-paid fee is fully refunded.</li>
+          <li>Once your spot is <strong>confirmed and onboarding begins</strong>, the fee is non-refundable.</li>
+        </ul>
+        <p>Payment method: <strong>[insert payment link/method]</strong>. Program directors will confirm receipt before onboarding begins.</p>
       </div>
       <div class="doc-section">
-        <h2>8. Removal from Program</h2>
+        <h2>9. Removal from Program</h2>
         <p>The Program reserves the right to remove a Founder who consistently fails to meet commitments, engages in
           disrespectful behavior, or whose participation is determined to be detrimental to the cohort. Removal
           decisions will be made by program directors after a written warning and opportunity to remedy the issue.</p>
       </div>
       <div class="doc-section">
-        <h2>9. Limitation of Liability</h2>
+        <h2>10. Limitation of Liability</h2>
         <p>The White Rabbit Accelerator, its directors, mentors, and partners make no guarantees about business
           outcomes, funding, revenue, or success. The Founder participates voluntarily and accepts responsibility for
           their own business decisions.</p>
       </div>
       <div class="doc-section">
-        <h2>10. Governing Law</h2>
+        <h2>11. Governing Law</h2>
         <p>This agreement is governed by the laws of the State of Oregon. Any disputes shall be resolved in Jackson
           County, Oregon.</p>
       </div>
@@ -946,6 +985,18 @@
                 *</label><input type="text" name="signature" required placeholder="Type full name as signature"></div>
             <div class="sign-field"><label>Co-Founder Name (if applicable)</label><input type="text"
                 name="co_founder_name" placeholder="Leave blank if solo founder"></div>
+            <div class="sign-field" style="grid-column:1/-1">
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                <input type="checkbox" name="fee_confirmed" value="yes" required>
+                <span>I confirm that I have paid (or will pay before onboarding begins) the <strong>$500 acceptance fee</strong>, and understand it is non-refundable once my spot is confirmed. *</span>
+              </label>
+            </div>
+            <div class="sign-field" style="grid-column:1/-1">
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                <input type="checkbox" name="participation_interest_acknowledged" value="yes" required>
+                <span>I understand that White Rabbit Accelerator holds a <strong>Community Stake</strong> — a contractual right to 3% of my company's equity value (no units or shares issued today), convertible upon a Trigger Event or cancelable via the <strong>$6,000 Clean Break buyback</strong> within 2 years of Demo Day. *</span>
+              </label>
+            </div>
           </div>
           <button type="submit" class="btn-sign">✓ Sign &amp; Submit Agreement</button>
         </form>
@@ -955,7 +1006,7 @@
   <footer>
     <div class="footer-brand">White Rabbit Accelerator</div>
     <div class="footer-info">Ashland, Oregon · Rogue Valley · Directors: Ali Tarraf &amp; Thor Mueller<br>Applications
-      Open March 26, 2026 · Cohort Starts Apr 7 · Demo Day Jul 11, 2026</div>
+      Open April 7, 2026 · Cohort Starts May 5 · Demo Day Aug 8, 2026</div>
     <div class="footer-links"><a href="founder-application.html">Apply</a> · <a href="mentor-agreement.html">Mentor</a>
     </div>
   </footer>

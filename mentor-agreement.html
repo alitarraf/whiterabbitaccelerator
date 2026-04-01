@@ -574,15 +574,23 @@
       font-weight: 400;
     }
 
-    .sign-field input {
+    .sign-field input:not([type="checkbox"]) {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--mint);
       font-size: 17px;
     }
 
-    .sign-field input:focus {
+    .sign-field input:not([type="checkbox"]):focus {
       border-color: var(--lime);
+    }
+
+    .sign-field input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--lime);
+      cursor: pointer;
     }
 
     .btn-sign {
@@ -825,7 +833,7 @@
   <div class="page-hero sec-light">
     <div class="eyebrow">Program Document</div>
     <h1>Mentor<br>Agreement</h1>
-    <p>White Rabbit Accelerator · Cohort 1 · April–July 2026 · Ashland, Oregon</p>
+    <p>White Rabbit Accelerator · Cohort 1 · May–August 2026 · Ashland, Oregon</p>
   </div>
   <div class="sec-dark">
     <div class="doc-wrap">
@@ -886,13 +894,49 @@
 
           <div class="doc-section">
             <h2>1. Mentor Role</h2>
-            <p>As a White Rabbit Accelerator mentor, you will be matched with 1–3 founders based on your expertise and
-              their needs. Your role is to provide guidance, accountability, honest feedback, and connections — not to
-              run the business for them.</p>
+            <p>As a White Rabbit Accelerator mentor, you will be matched with one or more founders based on your expertise and their needs. Your role is to provide guidance, accountability, honest feedback, and connections — not to run the business for them. Your equity relationship is with White Rabbit Accelerator, not directly with the startup.</p>
             <p>Great mentors do these things: listen more than they talk, ask questions that help founders think, share
               relevant experience without prescribing exact answers, and show up consistently.</p>
           </div>
-          <!-- ... (Content skipped for brevity in replace block, but keeping structure intact) ... -->
+          <div class="doc-section">
+            <h2>2. Time Commitment &amp; Hour Logging</h2>
+            <p>Commit to a minimum of <strong>25 hours of direct advisory time</strong> per startup you engage with during the cohort (May 5 – August 8, 2026). Qualifying hours include: 1:1 calls, group sessions, email/message responses, and Demo Day prep.</p>
+            <p>Hours must be logged in the program's shared tracking sheet (link provided at onboarding). Unlogged hours may not count toward your equity eligibility. Aim for at least one meaningful touchpoint per week with each assigned founder.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>3. Compensation &amp; Community Stake</h2>
+            <p>In exchange for your contributions, you earn a share of the <strong>3% Community Stake</strong> the accelerator holds in each startup you meaningfully support. This is a contractual right to future value — no equity units are issued today. There is no cash compensation; this is pure upside if the startup succeeds.</p>
+            <p>Your share is allocated <strong>internally by the Program Directors</strong> based on: (a) <strong>hours logged</strong> + (b) <strong>founder feedback/ratings</strong> at program end. The mentor pool is capped at approximately 10 per cohort. Mentors who do not reach the 25-hour minimum or receive poor founder ratings receive zero allocation for that startup.</p>
+            <p><strong>No Direct Claim Against Founders.</strong> Your contractual relationship is with White Rabbit Accelerator only. You have no direct legal claim against any founder or startup for compensation, equity, or damages. All distributions are made at the sole discretion of the Program Directors from proceeds received by White Rabbit Accelerator.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>4. Vesting Schedule</h2>
+            <p>Your Community Stake vests on the same milestones as the startup's:</p>
+            <ul>
+              <li><strong>1.5%</strong> (your pro-rata share of this half) vests upon Demo Day completion.</li>
+              <li><strong>1.5%</strong> (your pro-rata share of this half) vests upon the earlier of: (a) the startup achieving <strong>$5,000 in cumulative gross revenue</strong>; or (b) the startup <strong>raising $50,000 or more</strong> in external funding (grants, angel investment, pre-seed, or equivalent) — within 24 months of Demo Day.</li>
+              <li>If neither milestone is met within <strong>24 months</strong>, the second half is forfeited.</li>
+            </ul>
+            <p>Note: If a founder exercises the <strong>$6,000 Clean Break buyback</strong>, proceeds are distributed to vested mentors by the Program Directors at that time.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>5. Quality Control &amp; Mismatch Handling</h2>
+            <p>Founder feedback matters. If a founder formally indicates a mentor's input was not helpful, the program directors may zero or reduce that mentor's allocation for that startup — at director discretion. No hard feelings; this keeps quality high.</p>
+            <p>Mismatches happen. If a founder requests a reassignment after initial meetings, the accelerator will make reasonable efforts to connect them with another mentor or bring in an alternative. Likewise, if you feel a startup isn't a match for your expertise, notify the program directors early — we'll reassign as needed. Goal: productive relationships, not forced ones.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>6. Confidentiality &amp; Code of Conduct</h2>
+            <p>Treat all startup information as confidential — NDA basics apply. Do not share proprietary details of founders' ventures without explicit permission. Disclose any prior relationship with a startup or competing interest to the program directors before engaging. Keep all feedback constructive and professional.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>7. Term &amp; Termination</h2>
+            <p>This agreement covers the current cohort plus any follow-on support you choose to provide. Either side may end the relationship with written notice to the program directors. Upon termination, vesting stops accruing — you retain any equity already vested at that point.</p>
+          </div>
 
           <div class="sign-block">
             <h2
@@ -906,6 +950,12 @@
               <div class="sign-field"><label>Date *</label><input type="date" name="date" required></div>
               <div class="sign-field" style="grid-column:1/-1"><label>Signature — type full name *</label><input
                   type="text" name="signature" required placeholder="Type full name to sign"></div>
+              <div class="sign-field" style="grid-column:1/-1">
+                <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                  <input type="checkbox" name="equity_acknowledged" value="yes" required>
+                  <span>I understand that my compensation is <strong>equity-only</strong> (a share of the 3% pool per startup), contingent on meeting the 25-hour minimum and vesting milestones. There is no guaranteed cash payment. *</span>
+                </label>
+              </div>
             </div>
             <button type="submit" class="btn-sign">✓ Sign Mentor Agreement</button>
           </div>
@@ -916,7 +966,7 @@
   <footer>
     <div class="footer-brand">White Rabbit Accelerator</div>
     <div class="footer-info">Ashland, Oregon · Rogue Valley · Directors: Ali Tarraf &amp; Thor Mueller<br>Applications
-      Open March 26, 2026 · Cohort Starts Apr 7 · Demo Day Jul 11, 2026</div>
+      Open April 7, 2026 · Cohort Starts May 5 · Demo Day Aug 8, 2026</div>
     <div class="footer-links"><a href="founder-application.html">Apply</a> · <a href="mentor-agreement.html">Mentor</a>
     </div>
   </footer>
