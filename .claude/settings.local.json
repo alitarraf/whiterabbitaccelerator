@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(grep -n \"<h1\\\\|<h2\\\\|<title\" /d/whiterabbitaccelerator/*.html)",
+      "Bash(find d:/whiterabbitaccelerator -name *.html -type f)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git submodule:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
