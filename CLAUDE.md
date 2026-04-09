@@ -15,9 +15,7 @@ WRA does NOT take actual equity (LLC membership units or stock) at signing. Inst
 ### Trigger Events (when the 3% converts to real money)
 1. **Liquidity Event** — sale, merger, or IPO: WRA receives 3% of net proceeds.
 2. **VC/C-Corp conversion** — company converts to raise institutional VC: WRA receives 3% of post-money shares.
-3. **Revenue Milestone** — company hits $150k+ cumulative gross revenue within 36 months of Demo Day: WRA requests a flat **$6,000 Success Fee**, which fully extinguishes the agreement.
-
-**Revenue Milestone math fix (March 2026):** Original language said "3% of that year's gross revenue, capped at $6,000." Problem: 3% of $150k = $4,500, not $6k. The cap isn't reached until $200k revenue. Fixed to a flat $6,000 Success Fee — simpler, founder-friendly, and consistent with the Clean Break buyback price.
+3. **Revenue Milestone** — company hits $150k+ cumulative gross revenue within 36 months of Demo Day: WRA requests a flat **$10,000 Success Fee**, which fully extinguishes the agreement.
 
 **Trigger priority clause:** The first Trigger Event to occur takes precedence and satisfies all obligations under the section. If multiple triggers occur simultaneously, WRA elects which applies. This prevents disputes when e.g. a founder hits $150k revenue and raises $50k grants in the same month.
 
@@ -28,10 +26,10 @@ WRA does NOT take actual equity (LLC membership units or stock) at signing. Inst
 - **1.5%** vests on the earlier of: (a) $5,000 cumulative gross revenue, or (b) $50,000+ external funding raised — within **24 months** of Demo Day.
 - If neither milestone met in 24 months: second 1.5% is forfeited.
 
-### Flat Buyback / "Clean Break" Option
-Founder can cancel all future equity obligations for a **flat $6,000** within 2 years of Demo Day. No valuation math, no appraisals, no negotiation.
+### Partial Buyback Option (Up to 2%)
+Founder can repurchase up to **2% of the 3% Community Stake** within 2 years of Demo Day at fixed prices: **$10,000 in Year 1** (within 12 months of Demo Day), **$20,000 in Year 2** (12–24 months after Demo Day). The remaining **1% is retained by WRA permanently** — WRA must elect in writing to release it. This protects WRA's upside in companies that scale significantly.
 
-**Why flat fee beats 2× valuation math:** The price bottoms out at $6k either way (3% × 2× × $100k floor). A fixed number is psychologically simpler — "write us a $6k check and you're free" — fewer moving parts, fewer arguments. Mental win for small-town founders.
+**Why WRA keeps 1% permanently:** Prevents founders who succeed at scale from fully buying out WRA's interest. The tiered pricing also rewards early buybacks and discourages founders from waiting to see how things play out.
 
 **Zombie protection:** If a startup fails or stagnates without a trigger event, WRA has no ongoing liability as an equity holder. The contract sits dormant. No dissolution paperwork needed.
 
@@ -70,7 +68,7 @@ WRA's instrument resembles a SAFE (Simple Agreement for Future Equity) superfici
 | Consideration | Cash invested | Services rendered |
 | Conversion trigger | Next priced equity round only | Sale, VC round, OR revenue milestone |
 | Vesting | None | Yes (milestone-based) |
-| Buyback option | No | Yes (flat $6k Clean Break) |
+| Buyback option | No | Yes (up to 2% of 3%; $10k Y1 / $20k Y2; 1% non-buyable) |
 | Revenue trigger | No | Yes ($150k cumulative) |
 | Designed for | VC-track startups | Rural LLCs, most never raise VC |
 
